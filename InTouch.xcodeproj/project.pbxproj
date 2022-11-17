@@ -13,6 +13,7 @@
 		800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE12926120B00D9AECF /* Assets.xcassets */; };
 		800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE32926120B00D9AECF /* LaunchScreen.storyboard */; };
 		80545E152926C1510084222E /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E142926C1510084222E /* UILabel + Extension.swift */; };
+		80545E172926E5800084222E /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E162926E5800084222E /* UIButton + Extension.swift */; };
 		80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01029263AF300A25042 /* RegisterViewController.swift */; };
 		80A6B01529263B1700A25042 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01429263B1700A25042 /* ConversationsViewController.swift */; };
 		80A6B01729263B2400A25042 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01629263B2400A25042 /* NewConversationViewController.swift */; };
@@ -35,6 +36,7 @@
 		800B5CE42926120B00D9AECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		800B5CE62926120B00D9AECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80545E142926C1510084222E /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		80545E162926E5800084222E /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		80A6B01029263AF300A25042 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		80A6B01429263B1700A25042 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		80A6B01629263B2400A25042 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				80A6B0292926594000A25042 /* UIView + Extension.swift */,
 				80545E142926C1510084222E /* UILabel + Extension.swift */,
+				80545E162926E5800084222E /* UIButton + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				80A6B01529263B1700A25042 /* ConversationsViewController.swift in Sources */,
 				80A6B01D29263B7F00A25042 /* VideoPlayerViewController.swift in Sources */,
 				800B5CD92926120800D9AECF /* AppDelegate.swift in Sources */,
+				80545E172926E5800084222E /* UIButton + Extension.swift in Sources */,
 				80A6B01929263B3800A25042 /* ProfileViewController.swift in Sources */,
 				80A6B01B29263B7100A25042 /* PhotoViewerViewController.swift in Sources */,
 				800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */,

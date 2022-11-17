@@ -3,17 +3,19 @@ import UIKit
 class LoginView: UIView {
     
     //MARK: - Constants
+    private var timeIntervalAnimate = 0.5
     
     private var mainLabel = UILabel()
+    
     private var propertyStackView = UIStackView()
     private var communicatePropertyLabel = UILabel()
     private var sharePropertyLabel = UILabel()
     private var shareLocationLabel = UILabel()
     private var stayInTouchLabel = UILabel()
+    
+    private var buttonsStackView = UIStackView()
     private var logInButton = UIButton()
     private var registerButton = UIButton()
-    
-    private var timeIntervalAnimate = 0.5
     
     //MARK: - Override
     
@@ -22,9 +24,11 @@ class LoginView: UIView {
         backgroundColor = UIColor(named: KeysColor.loginBackColor.rawValue)
         showAnimatedMainLabel()
         configurePropertyStackView()
+        configureButtonsStackView()
         
         addSubiewWithoutAutoresizing(mainLabel)
         addSubiewWithoutAutoresizing(propertyStackView)
+        addSubiewWithoutAutoresizing(buttonsStackView)
         
         setConstraints()
         
@@ -72,6 +76,11 @@ class LoginView: UIView {
                 } completion: { _ in
                     UIView.animate(withDuration: time) {
                         self.stayInTouchLabel.alpha = 1
+                    } completion: { _ in
+                        UIView.animate(withDuration: time) {
+                            self.registerButton.alpha = 1
+                            self.logInButton.alpha = 1
+                        }
                     }
                 }
             }
@@ -108,7 +117,10 @@ class LoginView: UIView {
                                                minimumScaleFactor: 0.5)
         
         
-        let properties = [communicatePropertyLabel, sharePropertyLabel, shareLocationLabel, stayInTouchLabel]
+        let properties = [communicatePropertyLabel,
+                          sharePropertyLabel,
+                          shareLocationLabel,
+                          stayInTouchLabel]
         
         propertyStackView.spacing = 20
         propertyStackView.axis = .vertical
@@ -118,10 +130,39 @@ class LoginView: UIView {
             propertyStackView.addArrangedSubview(property)
             property.alpha = 0
         }
-        
     }
     
-    
+    private func configureButtonsStackView() {
+        logInButton = UIButton(type: .system)
+            .initButton(title: "Вход",
+                        titleFor: .normal,
+                        titleFont: .systemFont(ofSize: 30),
+                        backColor: .gray,
+                        titleColor: .black,
+                        titleColorFor: .normal,
+                        radius: 10)
+        
+        registerButton = UIButton(type: .system)
+            .initButton(title: "Регистрация",
+                        titleFor: .normal,
+                        titleFont: .systemFont(ofSize: 30),
+                        backColor: .gray,
+                        titleColor: .black,
+                        titleColorFor: .normal,
+                        radius: 10)
+        
+        let elements = [logInButton, registerButton]
+        
+        buttonsStackView.spacing = 20
+        buttonsStackView.axis = .vertical
+        buttonsStackView.alignment = .fill
+        buttonsStackView.distribution = .fill
+        
+        for element in elements {
+            buttonsStackView.addArrangedSubview(element)
+            element.alpha = 0
+        }
+    }
     
     //MARK: - Constraints
     
@@ -133,8 +174,12 @@ class LoginView: UIView {
             
             propertyStackView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 50),
             propertyStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            propertyStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+            propertyStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            
+            buttonsStackView.topAnchor.constraint(equalTo: propertyStackView.bottomAnchor, constant: 30),
+            buttonsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
+            buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
         ])
     }
-    
 }
