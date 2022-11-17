@@ -1,8 +1,19 @@
-//
-//  RegisterViewController.swift
-//  InTouch
-//
-//  Created by Кащенко on 17.11.22.
-//
+import UIKit
 
-import Foundation
+class RegisterViewController: UIViewController {
+    
+    //MARK: - Constants
+    
+    private let registerView = RegisterView()
+    
+    //MARK: - Lifecycles
+    
+    override func loadView() {
+        super.loadView()
+        view = registerView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}

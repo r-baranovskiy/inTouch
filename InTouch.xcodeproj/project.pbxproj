@@ -18,6 +18,9 @@
 		80A6B01929263B3800A25042 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01829263B3800A25042 /* ProfileViewController.swift */; };
 		80A6B01B29263B7100A25042 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01A29263B7100A25042 /* PhotoViewerViewController.swift */; };
 		80A6B01D29263B7F00A25042 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01C29263B7F00A25042 /* VideoPlayerViewController.swift */; };
+		80A6B021292652B700A25042 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B020292652B700A25042 /* LoginView.swift */; };
+		80A6B023292653A700A25042 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B022292653A700A25042 /* Enums.swift */; };
+		80A6B0252926561800A25042 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B0242926561800A25042 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		80A6B01829263B3800A25042 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		80A6B01A29263B7100A25042 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		80A6B01C29263B7F00A25042 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		80A6B020292652B700A25042 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		80A6B022292653A700A25042 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		80A6B0242926561800A25042 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 			children = (
 				800B5CD82926120800D9AECF /* AppDelegate.swift */,
 				800B5CDA2926120800D9AECF /* SceneDelegate.swift */,
+				80A6B022292653A700A25042 /* Enums.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -121,6 +128,8 @@
 		80C2192529263649004ED3D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80A6B020292652B700A25042 /* LoginView.swift */,
+				80A6B0242926561800A25042 /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,7 +225,10 @@
 				80A6B01929263B3800A25042 /* ProfileViewController.swift in Sources */,
 				80A6B01B29263B7100A25042 /* PhotoViewerViewController.swift in Sources */,
 				800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */,
+				80A6B021292652B700A25042 /* LoginView.swift in Sources */,
+				80A6B0252926561800A25042 /* RegisterView.swift in Sources */,
 				80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */,
+				80A6B023292653A700A25042 /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
