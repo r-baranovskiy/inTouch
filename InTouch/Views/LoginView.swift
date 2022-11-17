@@ -27,12 +27,13 @@ class LoginView: UIView {
     private func showAnimatedMainLabel() {
         let nameLabel = "In Touch"
         var charIndex = 0.0
-        mainLabel.text = ""
-        mainLabel.font = UIFont(name: KeysFont.logoFont.rawValue, size: 80)
-        mainLabel.textColor = .black
-        mainLabel.textAlignment = .center
-        mainLabel.adjustsFontSizeToFitWidth = true
-        mainLabel.minimumScaleFactor = 0.5
+        mainLabel = UILabel().initLabel(text: "",
+                                        font: UIFont(name: KeysFont.logoFont.rawValue, size: 80) ?? .systemFont(ofSize: 80),
+                                        color: .label,
+                                        textAlignment: .center,
+                                        adjustsFontSizeToFitWidth: true,
+                                        minimumScaleFactor: 0.5)
+        
         
         for char in nameLabel {
             Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { _ in
