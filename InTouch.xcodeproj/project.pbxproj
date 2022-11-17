@@ -21,6 +21,8 @@
 		80A6B021292652B700A25042 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B020292652B700A25042 /* LoginView.swift */; };
 		80A6B023292653A700A25042 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B022292653A700A25042 /* Enums.swift */; };
 		80A6B0252926561800A25042 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B0242926561800A25042 /* RegisterView.swift */; };
+		80A6B02A2926594000A25042 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B0292926594000A25042 /* UIView + Extension.swift */; };
+		80A6B02D29265ABC00A25042 /* beerMoney.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80A6B02C29265ABC00A25042 /* beerMoney.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		80A6B020292652B700A25042 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		80A6B022292653A700A25042 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		80A6B0242926561800A25042 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		80A6B0292926594000A25042 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		80A6B02C29265ABC00A25042 /* beerMoney.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beerMoney.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				80A6B01E29263C0100A25042 /* Models */,
 				80C219262926364F004ED3D6 /* Controllers */,
 				80C2192529263649004ED3D6 /* Views */,
+				80A6B026292658F900A25042 /* Enums */,
+				80A6B0272926591000A25042 /* Extensions */,
 				80C2192429263616004ED3D6 /* Resources */,
 			);
 			path = InTouch;
@@ -105,12 +111,43 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		80A6B026292658F900A25042 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				80A6B022292653A700A25042 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		80A6B0272926591000A25042 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80A6B0282926593000A25042 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		80A6B0282926593000A25042 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				80A6B0292926594000A25042 /* UIView + Extension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		80A6B02B29265A4100A25042 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				80A6B02C29265ABC00A25042 /* beerMoney.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		80C2192329263610004ED3D6 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				800B5CD82926120800D9AECF /* AppDelegate.swift */,
 				800B5CDA2926120800D9AECF /* SceneDelegate.swift */,
-				80A6B022292653A700A25042 /* Enums.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -118,6 +155,7 @@
 		80C2192429263616004ED3D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				80A6B02B29265A4100A25042 /* Fonts */,
 				800B5CE12926120B00D9AECF /* Assets.xcassets */,
 				800B5CE32926120B00D9AECF /* LaunchScreen.storyboard */,
 				800B5CE62926120B00D9AECF /* Info.plist */,
@@ -207,6 +245,7 @@
 			files = (
 				800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */,
 				800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */,
+				80A6B02D29265ABC00A25042 /* beerMoney.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +265,7 @@
 				80A6B01B29263B7100A25042 /* PhotoViewerViewController.swift in Sources */,
 				800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */,
 				80A6B021292652B700A25042 /* LoginView.swift in Sources */,
+				80A6B02A2926594000A25042 /* UIView + Extension.swift in Sources */,
 				80A6B0252926561800A25042 /* RegisterView.swift in Sources */,
 				80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */,
 				80A6B023292653A700A25042 /* Enums.swift in Sources */,
