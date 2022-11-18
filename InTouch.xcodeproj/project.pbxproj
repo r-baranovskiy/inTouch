@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		800B5CD92926120800D9AECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B5CD82926120800D9AECF /* AppDelegate.swift */; };
 		800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B5CDA2926120800D9AECF /* SceneDelegate.swift */; };
-		800B5CDD2926120800D9AECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B5CDC2926120800D9AECF /* LoginViewController.swift */; };
+		800B5CDD2926120800D9AECF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B5CDC2926120800D9AECF /* StartViewController.swift */; };
 		800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE12926120B00D9AECF /* Assets.xcassets */; };
 		800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE32926120B00D9AECF /* LaunchScreen.storyboard */; };
 		80545E152926C1510084222E /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E142926C1510084222E /* UILabel + Extension.swift */; };
@@ -20,18 +20,20 @@
 		80A6B01929263B3800A25042 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01829263B3800A25042 /* ProfileViewController.swift */; };
 		80A6B01B29263B7100A25042 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01A29263B7100A25042 /* PhotoViewerViewController.swift */; };
 		80A6B01D29263B7F00A25042 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01C29263B7F00A25042 /* VideoPlayerViewController.swift */; };
-		80A6B021292652B700A25042 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B020292652B700A25042 /* LoginView.swift */; };
+		80A6B021292652B700A25042 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B020292652B700A25042 /* StartView.swift */; };
 		80A6B023292653A700A25042 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B022292653A700A25042 /* Enums.swift */; };
 		80A6B0252926561800A25042 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B0242926561800A25042 /* RegisterView.swift */; };
 		80A6B02A2926594000A25042 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B0292926594000A25042 /* UIView + Extension.swift */; };
 		80A6B02D29265ABC00A25042 /* beerMoney.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80A6B02C29265ABC00A25042 /* beerMoney.ttf */; };
+		80E076D7292752A300499ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D6292752A300499ECF /* LoginViewController.swift */; };
+		80E076D929278BED00499ECF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D829278BED00499ECF /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		800B5CD52926120800D9AECF /* InTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		800B5CD82926120800D9AECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		800B5CDA2926120800D9AECF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		800B5CDC2926120800D9AECF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		800B5CDC2926120800D9AECF /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		800B5CE12926120B00D9AECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		800B5CE42926120B00D9AECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		800B5CE62926120B00D9AECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,11 +45,13 @@
 		80A6B01829263B3800A25042 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		80A6B01A29263B7100A25042 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		80A6B01C29263B7F00A25042 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
-		80A6B020292652B700A25042 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		80A6B020292652B700A25042 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		80A6B022292653A700A25042 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		80A6B0242926561800A25042 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		80A6B0292926594000A25042 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		80A6B02C29265ABC00A25042 /* beerMoney.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beerMoney.ttf; sourceTree = "<group>"; };
+		80E076D6292752A300499ECF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		80E076D829278BED00499ECF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +99,8 @@
 		80A6B01329263B0600A25042 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				800B5CDC2926120800D9AECF /* LoginViewController.swift */,
 				80A6B01029263AF300A25042 /* RegisterViewController.swift */,
+				80E076D6292752A300499ECF /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -172,8 +176,9 @@
 		80C2192529263649004ED3D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				80A6B020292652B700A25042 /* LoginView.swift */,
+				80A6B020292652B700A25042 /* StartView.swift */,
 				80A6B0242926561800A25042 /* RegisterView.swift */,
+				80E076D829278BED00499ECF /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				80A6B01329263B0600A25042 /* Login */,
+				800B5CDC2926120800D9AECF /* StartViewController.swift */,
 				80A6B01429263B1700A25042 /* ConversationsViewController.swift */,
 				80A6B01629263B2400A25042 /* NewConversationViewController.swift */,
 				80A6B01829263B3800A25042 /* ProfileViewController.swift */,
@@ -263,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80A6B01729263B2400A25042 /* NewConversationViewController.swift in Sources */,
-				800B5CDD2926120800D9AECF /* LoginViewController.swift in Sources */,
+				800B5CDD2926120800D9AECF /* StartViewController.swift in Sources */,
 				80A6B01529263B1700A25042 /* ConversationsViewController.swift in Sources */,
 				80A6B01D29263B7F00A25042 /* VideoPlayerViewController.swift in Sources */,
 				800B5CD92926120800D9AECF /* AppDelegate.swift in Sources */,
@@ -271,9 +277,11 @@
 				80A6B01929263B3800A25042 /* ProfileViewController.swift in Sources */,
 				80A6B01B29263B7100A25042 /* PhotoViewerViewController.swift in Sources */,
 				800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */,
-				80A6B021292652B700A25042 /* LoginView.swift in Sources */,
+				80A6B021292652B700A25042 /* StartView.swift in Sources */,
+				80E076D929278BED00499ECF /* LoginView.swift in Sources */,
 				80A6B02A2926594000A25042 /* UIView + Extension.swift in Sources */,
 				80545E152926C1510084222E /* UILabel + Extension.swift in Sources */,
+				80E076D7292752A300499ECF /* LoginViewController.swift in Sources */,
 				80A6B0252926561800A25042 /* RegisterView.swift in Sources */,
 				80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */,
 				80A6B023292653A700A25042 /* Enums.swift in Sources */,

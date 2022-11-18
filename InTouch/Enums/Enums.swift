@@ -8,3 +8,7 @@ enum KeysColor: String {
 enum KeysFont: String {
     case logoFont = "beerMoney"
 }
+
+enum KeysImages: String {
+    case backgroundImage = "backgroundImage"
+}
