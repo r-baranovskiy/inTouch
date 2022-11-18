@@ -78,8 +78,10 @@ class LoginView: UIView {
                         self.stayInTouchLabel.alpha = 1
                     } completion: { _ in
                         UIView.animate(withDuration: time) {
-                            self.registerButton.alpha = 1
-                            self.logInButton.alpha = 1
+                            self.registerButton.isHidden = false
+                            self.logInButton.isHidden = false
+                            self.registerButton.alpha = 0.7
+                            self.logInButton.alpha = 0.7
                         }
                     }
                 }
@@ -88,29 +90,33 @@ class LoginView: UIView {
     }
     
     private func configurePropertyStackView() {
+        var labelFont: UIFont {
+            return UIFont(name: "MarkerFelt-Thin", size: 20) ?? .systemFont(ofSize: 20)
+        }
+        
         communicatePropertyLabel = UILabel().initLabel(text: "📨  Общайся со своими друзьями",
-                                                       font: UIFont(name: "Papyrus", size: 20) ?? .systemFont(ofSize: 20),
+                                                       font: labelFont,
                                                        color: .label,
                                                        textAlignment: .left,
                                                        adjustsFontSizeToFitWidth: true,
                                                        minimumScaleFactor: 0.5)
         
         sharePropertyLabel = UILabel().initLabel(text: "🏞️  Делись фото и видео",
-                                                 font: UIFont(name: "Papyrus", size: 20) ?? .systemFont(ofSize: 20),
+                                                 font: labelFont,
                                                  color: .label,
                                                  textAlignment: .left,
                                                  adjustsFontSizeToFitWidth: true,
                                                  minimumScaleFactor: 0.5)
         
         shareLocationLabel = UILabel().initLabel(text: "⛱️  Покажи где ты находишься",
-                                                 font: UIFont(name: "Papyrus", size: 20) ?? .systemFont(ofSize: 20),
+                                                 font: labelFont,
                                                  color: .label,
                                                  textAlignment: .left,
                                                  adjustsFontSizeToFitWidth: true,
                                                  minimumScaleFactor: 0.5)
         
         stayInTouchLabel = UILabel().initLabel(text: "🌝  Оставайся всегда на связи",
-                                               font: UIFont(name: "Papyrus", size: 20) ?? .systemFont(ofSize: 20),
+                                               font: labelFont,
                                                color: .label,
                                                textAlignment: .left,
                                                adjustsFontSizeToFitWidth: true,
@@ -136,18 +142,18 @@ class LoginView: UIView {
         logInButton = UIButton(type: .system)
             .initButton(title: "Вход",
                         titleFor: .normal,
-                        titleFont: .systemFont(ofSize: 30),
+                        titleFont: .boldSystemFont(ofSize: 30),
                         backColor: .gray,
-                        titleColor: .black,
+                        titleColor: .label,
                         titleColorFor: .normal,
                         radius: 10)
         
         registerButton = UIButton(type: .system)
             .initButton(title: "Регистрация",
                         titleFor: .normal,
-                        titleFont: .systemFont(ofSize: 30),
+                        titleFont: .boldSystemFont(ofSize: 30),
                         backColor: .gray,
-                        titleColor: .black,
+                        titleColor: .label,
                         titleColorFor: .normal,
                         radius: 10)
         
@@ -160,6 +166,7 @@ class LoginView: UIView {
         
         for element in elements {
             buttonsStackView.addArrangedSubview(element)
+            element.isHidden = true
             element.alpha = 0
         }
     }
