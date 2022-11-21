@@ -197,8 +197,8 @@ class StartView: UIView {
             
             buttonsStackView.topAnchor.constraint(equalTo: propertyStackView.bottomAnchor, constant: 30),
             buttonsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
-            buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
+            buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
+            buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80),
         ])
     }
 }

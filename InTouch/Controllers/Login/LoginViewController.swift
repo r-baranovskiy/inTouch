@@ -6,6 +6,8 @@ class LoginViewController: UIViewController {
     
     private let logivView = LoginView()
     
+    private var backButton = UIButton()
+    
     //MARK: - Lifecycles
     
     override func loadView() {
@@ -15,6 +17,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton = logivView.backButton
+        backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+    }
+    
+    //MARK: - Functions
+    
+    @objc private func backButtonPressed() {
+        self.dismiss(animated: false)
     }
     
 }

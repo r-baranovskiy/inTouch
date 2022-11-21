@@ -27,6 +27,7 @@
 		80A6B02D29265ABC00A25042 /* beerMoney.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80A6B02C29265ABC00A25042 /* beerMoney.ttf */; };
 		80E076D7292752A300499ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D6292752A300499ECF /* LoginViewController.swift */; };
 		80E076D929278BED00499ECF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D829278BED00499ECF /* LoginView.swift */; };
+		80E076DB292798EE00499ECF /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076DA292798EE00499ECF /* UITextField + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		80A6B02C29265ABC00A25042 /* beerMoney.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beerMoney.ttf; sourceTree = "<group>"; };
 		80E076D6292752A300499ECF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80E076D829278BED00499ECF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		80E076DA292798EE00499ECF /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				80A6B0292926594000A25042 /* UIView + Extension.swift */,
 				80545E142926C1510084222E /* UILabel + Extension.swift */,
 				80545E162926E5800084222E /* UIButton + Extension.swift */,
+				80E076DA292798EE00499ECF /* UITextField + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				80A6B0252926561800A25042 /* RegisterView.swift in Sources */,
 				80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */,
 				80A6B023292653A700A25042 /* Enums.swift in Sources */,
+				80E076DB292798EE00499ECF /* UITextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

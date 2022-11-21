@@ -1,8 +1,7 @@
 import Foundation
 
 enum KeysColor: String {
-    case loginBackColor = "loginBackColor"
-    case registerBackColor = "registerBackColor"
+    case buttonsBackColor = "buttonsBackColor"
 }
 
 enum KeysFont: String {
