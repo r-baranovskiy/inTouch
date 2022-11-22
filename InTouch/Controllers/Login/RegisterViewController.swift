@@ -12,7 +12,6 @@ class RegisterViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = registerView
-        
         backButton = registerView.backButton
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
     }

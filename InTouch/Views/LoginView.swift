@@ -10,7 +10,7 @@ class LoginView: UIView {
     let backgroundButtonColor = UIColor(named: KeysColor.buttonsBackColor.rawValue) ?? .gray
     
     var backButton = UIButton()
-    var loginTextField = UITextField()
+    var emailTextField = UITextField()
     var passwordTextField = UITextField()
     var loginButton = UIButton()
     var forgetButton = UIButton()
@@ -36,7 +36,7 @@ class LoginView: UIView {
     }
     
     private func configureContainerView() {
-        loginTextField = UITextField()
+        emailTextField = UITextField()
             .initTextField(font: .boldSystemFont(ofSize: 20),
                            autocapitalization: .none,
                            autocorrection: .no,
@@ -44,6 +44,10 @@ class LoginView: UIView {
                            border: .roundedRect,
                            placeholder: "Email",
                            textColor: .label)
+        emailTextField.returnKeyType = .continue
+        emailTextField.layer.cornerRadius = 12
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = UIColor.lightGray.cgColor
         
         passwordTextField = UITextField()
             .initTextField(font: .boldSystemFont(ofSize: 20),
@@ -53,13 +57,17 @@ class LoginView: UIView {
                            border: .roundedRect,
                            placeholder: "Password",
                            textColor: .label)
+        passwordTextField.returnKeyType = .done
+        passwordTextField.layer.cornerRadius = 12
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
         passwordTextField.isSecureTextEntry = true
         
         forgetButton = UIButton(type: .system).initButton(title: "Забыли пароль?", titleFor: .normal, titleFont: .boldSystemFont(ofSize: 18), backColor: .clear, titleColor: .label, titleColorFor: .normal, radius: 0)
         
         loginButton = UIButton(type: .system).initButton(title: "Войти", titleFor: .normal, titleFont: .boldSystemFont(ofSize: 25), backColor: .lightGray, titleColor: .label, titleColorFor: .normal, radius: 15)
 
-        containerView.addSubiewWithoutAutoresizing(loginTextField)
+        containerView.addSubiewWithoutAutoresizing(emailTextField)
         containerView.addSubiewWithoutAutoresizing(passwordTextField)
         containerView.addSubiewWithoutAutoresizing(forgetButton)
         containerView.addSubiewWithoutAutoresizing(loginButton)
@@ -90,15 +98,15 @@ class LoginView: UIView {
             containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
             
-            loginTextField.topAnchor.constraint(equalTo: containerView.topAnchor),
-            loginTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            loginTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            loginTextField.heightAnchor.constraint(equalToConstant: 50),
+            emailTextField.topAnchor.constraint(equalTo: containerView.topAnchor),
+            emailTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            emailTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            emailTextField.heightAnchor.constraint(equalToConstant: 52),
             
-            passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 20),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
             passwordTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 52),
             
             forgetButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
             forgetButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
