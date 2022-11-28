@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(loginButtonPressed),
                               for: .touchUpInside)
         
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     //MARK: - Functions
@@ -45,5 +47,21 @@ class LoginViewController: UIViewController {
             self.showAlert(title: "Ошибка ввода",
                            message: "Проверьте всю введенную информацию."); return
         }
+        
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            loginButtonPressed()
+        }
+        
+        return true
     }
 }

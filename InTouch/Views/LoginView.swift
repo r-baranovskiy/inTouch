@@ -21,7 +21,7 @@ class LoginView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        configureView()
+        createBackButton()
         configureContainerView()
         
         addSubview(backgroundImageView)
@@ -73,7 +73,7 @@ class LoginView: UIView {
         containerView.addSubiewWithoutAutoresizing(loginButton)
     }
     
-    private func configureView() {
+    private func createBackButton() {
         backButton = UIButton(type: .system)
             .initButton(title: "Назад",
                         titleFor: .normal,
