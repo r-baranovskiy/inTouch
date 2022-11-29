@@ -1,8 +1,8 @@
 import UIKit
 
-final class RegisterViewController: UIViewController {
+final class RegisterViewController: UIViewController, UINavigationControllerDelegate {
     
-    //MARK: - UI Constants
+    // MARK: - UI Constants
     
     private let registerView = RegisterView()
     
@@ -13,9 +13,9 @@ final class RegisterViewController: UIViewController {
     private var emailTextField = UITextField()
     private var passwordTextField = UITextField()
     private var userPhotoView = UIImageView()
-
     
-    //MARK: - Lifecycles
+    
+    // MARK: - Lifecycles
     
     override func loadView() {
         super.loadView()
@@ -30,10 +30,10 @@ final class RegisterViewController: UIViewController {
         setTapRecognizer()
     }
     
-    //MARK: - Behaviour
+    // MARK: - Behaviour
     
     @objc private func userPhotoImagePressed() {
-        
+        presentPhotoActionAlert()
     }
     
     @objc private func backButtonPressed() {
@@ -56,7 +56,7 @@ final class RegisterViewController: UIViewController {
               !lastName.isEmpty,
               password.count >= 6 else {
             return showAlert(title: "Ошибка ввода",
-                           message: "Проверьте всю введенную информацию.")
+                             message: "Проверьте всю введенную информацию.")
         }
     }
     
@@ -76,7 +76,7 @@ final class RegisterViewController: UIViewController {
         userPhotoView.addGestureRecognizer(photoTapRecognizer)
     }
     
-    //MARK: - Appearance
+    // MARK: - Appearance
     
     private func setDelegates() {
         firstNameTextField.delegate = self
@@ -96,7 +96,7 @@ final class RegisterViewController: UIViewController {
     }
 }
 
-//MARK: - UITextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -114,4 +114,62 @@ extension RegisterViewController: UITextFieldDelegate {
         }
         return true
     }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension RegisterViewController: UIImagePickerControllerDelegate {
+    
+    private func presentPhotoActionAlert() {
+        let changeAlert = UIAlertController(title: "Фото для профиля",
+                                            message: "Хотите создать новое фото или выбрать из существующих?",
+                                            preferredStyle: .actionSheet)
+        
+        changeAlert.addAction(UIAlertAction(title: "Сделать фото",
+                                            style: .default,
+                                            handler: { [weak self] _ in
+            self?.presentCamera()
+        }))
+        
+        changeAlert.addAction(UIAlertAction(title: "Выбрать из галереи",
+                                            style: .default,
+                                            handler: { [weak self] _ in
+            self?.presentPhotoPicker()
+        }))
+        
+        changeAlert.addAction(UIAlertAction(title: "Отменить",
+                                            style: .cancel))
+        
+        present(changeAlert, animated: true)
+    }
+    
+    private func presentPhotoPicker() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    private func presentCamera() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        userPhotoView.image = image
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+    
+    
 }

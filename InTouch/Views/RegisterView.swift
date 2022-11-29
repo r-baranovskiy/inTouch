@@ -38,6 +38,11 @@ class RegisterView: UIView {
         setConstraints()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        userPhotoView.layer.cornerRadius = userPhotoView.frame.height / 2
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -115,6 +120,8 @@ class RegisterView: UIView {
     
     private func createUserPhotoView() {
         userPhotoView = UIImageView(image: UIImage(named: KeysImages.emptyPhoto.rawValue))
+        userPhotoView.clipsToBounds = true
+        userPhotoView.contentMode = .scaleAspectFill
     }
     
     private func createRegisterButton() {
