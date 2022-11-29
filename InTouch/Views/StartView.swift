@@ -2,11 +2,10 @@ import UIKit
 
 class StartView: UIView {
     
-    //MARK: - Constants
+    //MARK: - UI Constants
     private var timeIntervalAnimate = 0.5
     
     private var mainLabel = UILabel()
-    
     private var propertyStackView = UIStackView()
     private var communicatePropertyLabel = UILabel()
     private var sharePropertyLabel = UILabel()
@@ -14,8 +13,8 @@ class StartView: UIView {
     private var stayInTouchLabel = UILabel()
     
     private var buttonsStackView = UIStackView()
-    var logInButton = UIButton()
-    var registerButton = UIButton()
+    private (set) var logInButton = UIButton()
+    private (set) var registerButton = UIButton()
     
     private var backgroundImageView: UIImageView {
         return UIImageView(image: UIImage(named: KeysImages.backgroundImage.rawValue))
@@ -37,7 +36,6 @@ class StartView: UIView {
         addSubiewWithoutAutoresizing(buttonsStackView)
         
         setConstraints()
-        
     }
     
     required init?(coder: NSCoder) {

@@ -7,16 +7,17 @@ class RegisterView: UIView {
     private var backgroundImageView: UIImageView {
         return UIImageView(image: UIImage(named: KeysImages.backgroundImage.rawValue))
     }
-    let backgroundButtonColor = UIColor(named: KeysColor.buttonsBackColor.rawValue) ?? .gray
-    
-    var backButton = UIButton()
-    var emailTextField = UITextField()
-    var passwordTextField = UITextField()
-    var firstNameTextField = UITextField()
-    var lastNameTextField = UITextField()
-    var registerButton = UIButton()
+    private let backgroundButtonColor = UIColor(named: KeysColor.buttonsBackColor.rawValue) ?? .gray
     
     private var fieldsStackView = UIStackView()
+    
+    private (set) var backButton = UIButton()
+    private (set) var emailTextField = UITextField()
+    private (set) var passwordTextField = UITextField()
+    private (set) var firstNameTextField = UITextField()
+    private (set) var lastNameTextField = UITextField()
+    private (set) var registerButton = UIButton()
+    private (set) var userPhotoView = UIImageView()
     
     //MARK: - Override
     
@@ -24,6 +25,7 @@ class RegisterView: UIView {
         super .init(frame: frame)
         createBackButton()
         createRegisterButton()
+        createUserPhotoView()
         configureTextFields()
         configureStackView()
         
@@ -31,6 +33,7 @@ class RegisterView: UIView {
         addSubiewWithoutAutoresizing(backButton)
         addSubiewWithoutAutoresizing(fieldsStackView)
         addSubiewWithoutAutoresizing(registerButton)
+        addSubiewWithoutAutoresizing(userPhotoView)
         
         setConstraints()
     }
@@ -101,10 +104,17 @@ class RegisterView: UIView {
         fieldsStackView.axis = .vertical
         fieldsStackView.spacing = 20
         
-        let textFieldsArray: [UITextField] = [firstNameTextField, lastNameTextField, emailTextField, passwordTextField]
+        let textFieldsArray: [UITextField] = [firstNameTextField,
+                                              lastNameTextField,
+                                              emailTextField,
+                                              passwordTextField]
         
         textFieldsArray.forEach { fieldsStackView.addArrangedSubview($0) }
         textFieldsArray.forEach { $0.heightAnchor.constraint(equalToConstant: 52).isActive = true }
+    }
+    
+    private func createUserPhotoView() {
+        userPhotoView = UIImageView(image: UIImage(named: KeysImages.emptyPhoto.rawValue))
     }
     
     private func createRegisterButton() {
@@ -137,7 +147,12 @@ class RegisterView: UIView {
             backButton.heightAnchor.constraint(equalToConstant: 44),
             backButton.widthAnchor.constraint(equalToConstant: 100),
             
-            fieldsStackView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 100),
+            userPhotoView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 50),
+            userPhotoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            userPhotoView.heightAnchor.constraint(equalToConstant: 80),
+            userPhotoView.widthAnchor.constraint(equalTo: userPhotoView.heightAnchor),
+            
+            fieldsStackView.topAnchor.constraint(equalTo: userPhotoView.bottomAnchor, constant: 50),
             fieldsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             fieldsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
             

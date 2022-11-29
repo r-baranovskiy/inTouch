@@ -3,7 +3,7 @@ import UIKit
 
 class StartViewController: UIViewController {
     
-    //MARK: - Constants
+    //MARK: - UI constants
     
     private let startView = StartView()
     private var loginButton = UIButton()
@@ -18,14 +18,11 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton = startView.logInButton
-        registerButton = startView.registerButton
-        
-        loginButton.addTarget(self, action: #selector(loginButtonWasPressed), for: .touchUpInside)
-        registerButton.addTarget(self, action: #selector(registerButtonWasPressed), for: .touchUpInside)
+        setAppearance()
+        setTargets()
     }
     
-    //MARK: - Functions
+    //MARK: - Behaviour
     
     @objc private func registerButtonWasPressed() {
         let controller = RegisterViewController()
@@ -38,7 +35,21 @@ class StartViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: false)
     }
-
     
+    private func setTargets() {
+        loginButton.addTarget(self,
+                              action: #selector(loginButtonWasPressed),
+                              for: .touchUpInside)
+        registerButton.addTarget(self,
+                                 action: #selector(registerButtonWasPressed),
+                                 for: .touchUpInside)
+    }
+    
+    //MARK: - Appearance
+    
+    private func setAppearance() {
+        loginButton = startView.logInButton
+        registerButton = startView.registerButton
+    }
 }
 

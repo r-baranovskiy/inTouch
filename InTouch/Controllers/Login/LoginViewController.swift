@@ -1,8 +1,8 @@
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
-    //MARK: - Constants
+    //MARK: - UI Constants
     
     private let logivView = LoginView()
     
@@ -20,48 +20,62 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backButton = logivView.backButton
-        loginButton = logivView.loginButton
-        emailTextField = logivView.emailTextField
-        passwordTextField = logivView.passwordTextField
-        backButton.addTarget(self, action: #selector(backButtonPressed),
-                             for: .touchUpInside)
-        loginButton.addTarget(self, action: #selector(loginButtonPressed),
-                              for: .touchUpInside)
-        
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        setAppearance()
+        setTargets()
+        setDelegates()
     }
     
-    //MARK: - Functions
+    //MARK: - Behaviour
     
     @objc private func backButtonPressed() {
         self.dismiss(animated: false)
     }
     
     @objc private func loginButtonPressed() {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
         guard let email = emailTextField.text,
               let password = passwordTextField.text,
               !email.isEmpty,
-              !password.isEmpty, password.count >= 6 else {
-            self.showAlert(title: "Ошибка ввода",
-                           message: "Проверьте всю введенную информацию."); return
+              !password.isEmpty, password.count >= 6
+        else {
+            return showAlert(title: "Ошибка ввода",
+                             message: "Проверьте всю введенную информацию.")
         }
-        
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+    }
+    
+    private func setTargets() {
+        backButton.addTarget(self, action: #selector(backButtonPressed),
+                             for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed),
+                              for: .touchUpInside)
+    }
+    
+    private func setDelegates() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    //MARK: - Appearance
+    
+    private func setAppearance() {
+        backButton = logivView.backButton
+        loginButton = logivView.loginButton
+        emailTextField = logivView.emailTextField
+        passwordTextField = logivView.passwordTextField
     }
 }
 
+//MARK: - UITextFieldDelegate
+
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             loginButtonPressed()
         }
-        
         return true
     }
 }

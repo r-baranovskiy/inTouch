@@ -10,4 +10,5 @@ enum KeysFont: String {
 
 enum KeysImages: String {
     case backgroundImage = "backgroundImage"
+    case emptyPhoto = "emptyPhoto"
 }

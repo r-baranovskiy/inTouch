@@ -1,21 +1,22 @@
 import UIKit
 
-class LoginView: UIView {
+final class LoginView: UIView {
     
-    //MARK: - Constants
+    //MARK: - UI Constants
     
     private var backgroundImageView: UIImageView {
         return UIImageView(image: UIImage(named: KeysImages.backgroundImage.rawValue))
     }
-    let backgroundButtonColor = UIColor(named: KeysColor.buttonsBackColor.rawValue) ?? .gray
     
-    var backButton = UIButton()
-    var emailTextField = UITextField()
-    var passwordTextField = UITextField()
-    var loginButton = UIButton()
-    var forgetButton = UIButton()
+    private let backgroundButtonColor = UIColor(named: KeysColor.buttonsBackColor.rawValue) ?? .gray
     
     private var containerView = UIView()
+    
+    private (set) var backButton = UIButton()
+    private (set) var emailTextField = UITextField()
+    private (set) var passwordTextField = UITextField()
+    private (set) var loginButton = UIButton()
+    private (set) var forgetButton = UIButton()
     
     //MARK: - Override
     
@@ -63,10 +64,24 @@ class LoginView: UIView {
         passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
         passwordTextField.isSecureTextEntry = true
         
-        forgetButton = UIButton(type: .system).initButton(title: "Забыли пароль?", titleFor: .normal, titleFont: .boldSystemFont(ofSize: 18), backColor: .clear, titleColor: .label, titleColorFor: .normal, radius: 0)
+        forgetButton = UIButton(type: .system)
+            .initButton(title: "Забыли пароль?",
+                        titleFor: .normal,
+                        titleFont: .boldSystemFont(ofSize: 18),
+                        backColor: .clear,
+                        titleColor: .label,
+                        titleColorFor: .normal,
+                        radius: 0)
         
-        loginButton = UIButton(type: .system).initButton(title: "Войти", titleFor: .normal, titleFont: .boldSystemFont(ofSize: 25), backColor: .lightGray, titleColor: .label, titleColorFor: .normal, radius: 15)
-
+        loginButton = UIButton(type: .system)
+            .initButton(title: "Войти",
+                        titleFor: .normal,
+                        titleFont: .boldSystemFont(ofSize: 25),
+                        backColor: .lightGray,
+                        titleColor: .label,
+                        titleColorFor: .normal,
+                        radius: 15)
+        
         containerView.addSubiewWithoutAutoresizing(emailTextField)
         containerView.addSubiewWithoutAutoresizing(passwordTextField)
         containerView.addSubiewWithoutAutoresizing(forgetButton)
