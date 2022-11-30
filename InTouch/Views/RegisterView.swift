@@ -122,6 +122,8 @@ class RegisterView: UIView {
         userPhotoView = UIImageView(image: UIImage(named: KeysImages.emptyPhoto.rawValue))
         userPhotoView.clipsToBounds = true
         userPhotoView.contentMode = .scaleAspectFill
+        userPhotoView.layer.borderWidth = 2
+        userPhotoView.layer.borderColor = UIColor.darkGray.cgColor
     }
     
     private func createRegisterButton() {
@@ -156,7 +158,7 @@ class RegisterView: UIView {
             
             userPhotoView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 50),
             userPhotoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            userPhotoView.heightAnchor.constraint(equalToConstant: 80),
+            userPhotoView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.18),
             userPhotoView.widthAnchor.constraint(equalTo: userPhotoView.heightAnchor),
             
             fieldsStackView.topAnchor.constraint(equalTo: userPhotoView.bottomAnchor, constant: 50),
