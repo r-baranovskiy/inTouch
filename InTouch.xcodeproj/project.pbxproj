@@ -12,6 +12,9 @@
 		800B5CDD2926120800D9AECF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B5CDC2926120800D9AECF /* StartViewController.swift */; };
 		800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE12926120B00D9AECF /* Assets.xcassets */; };
 		800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE32926120B00D9AECF /* LaunchScreen.storyboard */; };
+		804303232939147F00CEC95D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804303222939147F00CEC95D /* GoogleService-Info.plist */; };
+		80430325293918CC00CEC95D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80430324293918CC00CEC95D /* DatabaseManager.swift */; };
+		804303272939227B00CEC95D /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804303262939227B00CEC95D /* ChatUser.swift */; };
 		80545E152926C1510084222E /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E142926C1510084222E /* UILabel + Extension.swift */; };
 		80545E172926E5800084222E /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E162926E5800084222E /* UIButton + Extension.swift */; };
 		80A41035292CABD000C527CB /* UIAlertController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A41034292CABD000C527CB /* UIAlertController + Extensions.swift */; };
@@ -29,7 +32,6 @@
 		80E076D7292752A300499ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D6292752A300499ECF /* LoginViewController.swift */; };
 		80E076D929278BED00499ECF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D829278BED00499ECF /* LoginView.swift */; };
 		80E076DB292798EE00499ECF /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076DA292798EE00499ECF /* UITextField + Extension.swift */; };
-		80E40324293711E900A7C971 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80E40323293711E900A7C971 /* GoogleService-Info.plist */; };
 		80E403302937150900A7C971 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 80E4032F2937150900A7C971 /* FirebaseAnalytics */; };
 		80E403322937150900A7C971 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 80E403312937150900A7C971 /* FirebaseAnalyticsOnDeviceConversion */; };
 		80E403342937150900A7C971 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 80E403332937150900A7C971 /* FirebaseAnalyticsSwift */; };
@@ -67,6 +69,9 @@
 		800B5CE42926120B00D9AECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		800B5CE62926120B00D9AECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		804303212938DC8100CEC95D /* InTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		804303222939147F00CEC95D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80430324293918CC00CEC95D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		804303262939227B00CEC95D /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		80545E142926C1510084222E /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		80545E162926E5800084222E /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		80A41034292CABD000C527CB /* UIAlertController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + Extensions.swift"; sourceTree = "<group>"; };
@@ -84,7 +89,6 @@
 		80E076D6292752A300499ECF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80E076D829278BED00499ECF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		80E076DA292798EE00499ECF /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
-		80E40323293711E900A7C971 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 		80A6B01E29263C0100A25042 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				804303262939227B00CEC95D /* ChatUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			children = (
 				800B5CD82926120800D9AECF /* AppDelegate.swift */,
 				800B5CDA2926120800D9AECF /* SceneDelegate.swift */,
+				80430324293918CC00CEC95D /* DatabaseManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -222,8 +228,8 @@
 				80A6B02B29265A4100A25042 /* Fonts */,
 				800B5CE12926120B00D9AECF /* Assets.xcassets */,
 				800B5CE32926120B00D9AECF /* LaunchScreen.storyboard */,
-				80E40323293711E900A7C971 /* GoogleService-Info.plist */,
 				800B5CE62926120B00D9AECF /* Info.plist */,
+				804303222939147F00CEC95D /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -343,7 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */,
-				80E40324293711E900A7C971 /* GoogleService-Info.plist in Resources */,
+				804303232939147F00CEC95D /* GoogleService-Info.plist in Resources */,
 				800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */,
 				80A6B02D29265ABC00A25042 /* beerMoney.ttf in Resources */,
 			);
@@ -357,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80A6B01729263B2400A25042 /* NewConversationViewController.swift in Sources */,
+				804303272939227B00CEC95D /* ChatUser.swift in Sources */,
 				800B5CDD2926120800D9AECF /* StartViewController.swift in Sources */,
 				80A6B01529263B1700A25042 /* ConversationsViewController.swift in Sources */,
 				80A41035292CABD000C527CB /* UIAlertController + Extensions.swift in Sources */,
@@ -368,6 +375,7 @@
 				800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */,
 				80A6B021292652B700A25042 /* StartView.swift in Sources */,
 				80E076D929278BED00499ECF /* LoginView.swift in Sources */,
+				80430325293918CC00CEC95D /* DatabaseManager.swift in Sources */,
 				80A6B02A2926594000A25042 /* UIView + Extension.swift in Sources */,
 				80545E152926C1510084222E /* UILabel + Extension.swift in Sources */,
 				80E076D7292752A300499ECF /* LoginViewController.swift in Sources */,

@@ -33,7 +33,7 @@ final class LoginViewController: UIViewController {
                 return
             }
             
-            guard let result = authResult,
+            guard authResult != nil,
                   error == nil else {
                 strongSelf.showAlert(title: "Error", message: error?.localizedDescription ?? "")
                 return

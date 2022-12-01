@@ -31,37 +31,7 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     
     //MARK: - Registration
     
-    private func createUser(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
-            guard let strongSelf = self else {
-                return
-            }
-            
-            guard let result = authResult,
-                  error == nil else {
-                strongSelf.showAlert(title: "Error", message: error?.localizedDescription ?? "")
-                return
-            }
-            strongSelf.navigationController?.popToRootViewController(animated: false)
-        }
-    }
-    
-    //MARK: - Behaviour
-    
-    @objc private func userPhotoImagePressed() {
-        presentPhotoActionAlert()
-    }
-    
-    @objc private func backButtonPressed() {
-        navigationController?.popToRootViewController(animated: false)
-    }
-    
     @objc private func registerButtonPressed() {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        firstNameTextField.resignFirstResponder()
-        lastNameTextFeld.resignFirstResponder()
-        
         guard let email = emailTextField.text,
               let password = passwordTextField.text,
               let firstName = firstNameTextField.text,
@@ -74,8 +44,35 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
             return showAlert(title: "Ошибка ввода",
                              message: "Проверьте всю введенную информацию.")
         }
-        
-        createUser(email: email, password: password)
+        createUser(email: email, password: password, firstName: firstName, lastName: lastName)
+    }
+    
+    private func createUser(email: String, password: String, firstName: String, lastName: String) {
+        DatabaseManager.shared.userExists(with: email) { [weak self] isExist in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            if !isExist {
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    guard authResult != nil,
+                          error == nil else {
+                        strongSelf.showAlert(title: "Ошибка", message: error?.localizedDescription ?? "")
+                        return
+                    }
+                }
+            } else {
+                strongSelf.showAlert(title: "Пользователь с таким email уже существует", message: "")
+            }
+            DatabaseManager.shared.addUser(with: ChatUser(firstName: firstName, lastName: lastName, emailAddress: email))
+            strongSelf.navigationController?.pushViewController(ConversationsViewController(), animated: true)
+        }
+    }
+    
+    //MARK: - Behaviour
+    
+    @objc private func userPhotoImagePressed() {
+        presentPhotoActionAlert()
     }
     
     private func setTargets() {
@@ -92,6 +89,13 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     }
     
     //MARK: - Appearance
+    
+    private func hideKeyboard() {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        firstNameTextField.resignFirstResponder()
+        lastNameTextFeld.resignFirstResponder()
+    }
     
     private func setDelegates() {
         firstNameTextField.delegate = self
@@ -185,3 +189,4 @@ extension RegisterViewController: UIImagePickerControllerDelegate {
         picker.dismiss(animated: true)
     }
 }
+

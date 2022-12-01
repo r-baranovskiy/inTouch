@@ -29,7 +29,7 @@ class ConversationsViewController: UIViewController {
     
     private func setAppearance() {
         view.backgroundColor = .white
-
+        
         navigationItem.hidesBackButton = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOut))
     }
