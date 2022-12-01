@@ -2,7 +2,7 @@ import UIKit
 
 class RegisterView: UIView {
     
-    //MARK: - Constants
+    //MARK: - UI
     
     private var backgroundImageView: UIImageView {
         return UIImageView(image: UIImage(named: KeysImages.backgroundImage.rawValue))
@@ -11,7 +11,6 @@ class RegisterView: UIView {
     
     private var fieldsStackView = UIStackView()
     
-    private (set) var backButton = UIButton()
     private (set) var emailTextField = UITextField()
     private (set) var passwordTextField = UITextField()
     private (set) var firstNameTextField = UITextField()
@@ -23,14 +22,12 @@ class RegisterView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        createBackButton()
         createRegisterButton()
         createUserPhotoView()
         configureTextFields()
         configureStackView()
         
         addSubview(backgroundImageView)
-        addSubiewWithoutAutoresizing(backButton)
         addSubiewWithoutAutoresizing(fieldsStackView)
         addSubiewWithoutAutoresizing(registerButton)
         addSubiewWithoutAutoresizing(userPhotoView)
@@ -136,27 +133,11 @@ class RegisterView: UIView {
                         radius: 15)
     }
     
-    private func createBackButton() {
-        backButton = UIButton(type: .system)
-            .initButton(title: "Назад",
-                        titleFor: .normal,
-                        titleFont: .boldSystemFont(ofSize: 30),
-                        backColor: backgroundButtonColor,
-                        titleColor: .label,
-                        titleColorFor: .normal,
-                        radius: 12)
-    }
-    
     //MARK: - Constraints
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
-            backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            backButton.heightAnchor.constraint(equalToConstant: 44),
-            backButton.widthAnchor.constraint(equalToConstant: 100),
-            
-            userPhotoView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 50),
+            userPhotoView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 100),
             userPhotoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             userPhotoView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.18),
             userPhotoView.widthAnchor.constraint(equalTo: userPhotoView.heightAnchor),

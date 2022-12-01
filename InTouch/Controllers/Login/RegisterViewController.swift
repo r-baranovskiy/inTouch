@@ -6,8 +6,6 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     //MARK: - UI Constants
     
     private let registerView = RegisterView()
-    
-    private var backButton = UIButton()
     private var registerButton = UIButton()
     private var firstNameTextField = UITextField()
     private var lastNameTextFeld = UITextField()
@@ -34,13 +32,17 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     //MARK: - Registration
     
     private func createUser(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            guard let result = authResult,
-                  error == nil else {
-                self.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let strongSelf = self else {
                 return
             }
-            let user = result.user
+            
+            guard let result = authResult,
+                  error == nil else {
+                strongSelf.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+                return
+            }
+            strongSelf.navigationController?.popToRootViewController(animated: false)
         }
     }
     
@@ -51,7 +53,7 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     }
     
     @objc private func backButtonPressed() {
-        self.dismiss(animated: false)
+        navigationController?.popToRootViewController(animated: false)
     }
     
     @objc private func registerButtonPressed() {
@@ -77,9 +79,6 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     }
     
     private func setTargets() {
-        backButton.addTarget(self,
-                             action: #selector(backButtonPressed),
-                             for: .touchUpInside)
         registerButton.addTarget(self,
                                  action: #selector(registerButtonPressed),
                                  for: .touchUpInside)
@@ -102,7 +101,6 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     }
     
     private func setAppearance() {
-        backButton = registerView.backButton
         userPhotoView = registerView.userPhotoView
         registerButton = registerView.registerButton
         firstNameTextField = registerView.firstNameTextField

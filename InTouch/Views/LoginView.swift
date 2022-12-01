@@ -12,7 +12,6 @@ final class LoginView: UIView {
     
     private var containerView = UIView()
     
-    private (set) var backButton = UIButton()
     private (set) var emailTextField = UITextField()
     private (set) var passwordTextField = UITextField()
     private (set) var loginButton = UIButton()
@@ -22,11 +21,9 @@ final class LoginView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        createBackButton()
         configureContainerView()
         
         addSubview(backgroundImageView)
-        addSubiewWithoutAutoresizing(backButton)
         addSubiewWithoutAutoresizing(containerView)
         
         setConstraints()
@@ -88,27 +85,11 @@ final class LoginView: UIView {
         containerView.addSubiewWithoutAutoresizing(loginButton)
     }
     
-    private func createBackButton() {
-        backButton = UIButton(type: .system)
-            .initButton(title: "Назад",
-                        titleFor: .normal,
-                        titleFont: .boldSystemFont(ofSize: 30),
-                        backColor: backgroundButtonColor,
-                        titleColor: .label,
-                        titleColorFor: .normal,
-                        radius: 12)
-    }
-    
     //MARK: - Constraints
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
-            backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            backButton.heightAnchor.constraint(equalToConstant: 44),
-            backButton.widthAnchor.constraint(equalToConstant: 100),
-            
-            containerView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 100),
+            containerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 100),
             containerView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -100),
             containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
@@ -132,7 +113,6 @@ final class LoginView: UIView {
             loginButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             loginButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             loginButton.heightAnchor.constraint(equalToConstant: 40)
-            
         ])
     }
 }

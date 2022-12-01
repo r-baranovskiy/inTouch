@@ -7,7 +7,6 @@ final class LoginViewController: UIViewController {
     
     private let logivView = LoginView()
     
-    private var backButton = UIButton()
     private var loginButton = UIButton()
     private var emailTextField = UITextField()
     private var passwordTextField = UITextField()
@@ -29,21 +28,21 @@ final class LoginViewController: UIViewController {
     //MARK: - LogIn User
     
     private func loginUser(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            guard let result = authResult,
-                  error == nil else {
-                self.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let strongSelf = self else {
                 return
             }
-            print(result.user)
+            
+            guard let result = authResult,
+                  error == nil else {
+                strongSelf.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+                return
+            }
+            strongSelf.navigationController?.pushViewController(ConversationsViewController(), animated: true)
         }
     }
     
     //MARK: - Behaviour
-    
-    @objc private func backButtonPressed() {
-        self.dismiss(animated: false)
-    }
     
     @objc private func loginButtonPressed() {
         emailTextField.resignFirstResponder()
@@ -60,8 +59,6 @@ final class LoginViewController: UIViewController {
     }
     
     private func setTargets() {
-        backButton.addTarget(self, action: #selector(backButtonPressed),
-                             for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonPressed),
                               for: .touchUpInside)
     }
@@ -74,7 +71,6 @@ final class LoginViewController: UIViewController {
     //MARK: - Appearance
     
     private func setAppearance() {
-        backButton = logivView.backButton
         loginButton = logivView.loginButton
         emailTextField = logivView.emailTextField
         passwordTextField = logivView.passwordTextField
