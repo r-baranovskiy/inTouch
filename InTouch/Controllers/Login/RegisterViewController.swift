@@ -1,8 +1,9 @@
 import UIKit
+import FirebaseAuth
 
 final class RegisterViewController: UIViewController, UINavigationControllerDelegate {
     
-    // MARK: - UI Constants
+    //MARK: - UI Constants
     
     private let registerView = RegisterView()
     
@@ -15,7 +16,7 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     private var userPhotoView = UIImageView()
     
     
-    // MARK: - Lifecycles
+    //MARK: - Lifecycles
     
     override func loadView() {
         super.loadView()
@@ -30,7 +31,20 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
         setTapRecognizer()
     }
     
-    // MARK: - Behaviour
+    //MARK: - Registration
+    
+    private func createUser(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            guard let result = authResult,
+                  error == nil else {
+                self.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+                return
+            }
+            let user = result.user
+        }
+    }
+    
+    //MARK: - Behaviour
     
     @objc private func userPhotoImagePressed() {
         presentPhotoActionAlert()
@@ -58,6 +72,8 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
             return showAlert(title: "Ошибка ввода",
                              message: "Проверьте всю введенную информацию.")
         }
+        
+        createUser(email: email, password: password)
     }
     
     private func setTargets() {
@@ -76,7 +92,7 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
         userPhotoView.addGestureRecognizer(photoTapRecognizer)
     }
     
-    // MARK: - Appearance
+    //MARK: - Appearance
     
     private func setDelegates() {
         firstNameTextField.delegate = self
@@ -96,7 +112,7 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     }
 }
 
-// MARK: - UITextFieldDelegate
+//MARK: - UITextFieldDelegate
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -116,7 +132,7 @@ extension RegisterViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - UIImagePickerControllerDelegate
+//MARK: - UIImagePickerControllerDelegate
 
 extension RegisterViewController: UIImagePickerControllerDelegate {
     
@@ -170,6 +186,4 @@ extension RegisterViewController: UIImagePickerControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
-    
-    
 }

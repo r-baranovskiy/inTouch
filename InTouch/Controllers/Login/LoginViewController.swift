@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 
 final class LoginViewController: UIViewController {
     
@@ -25,6 +26,19 @@ final class LoginViewController: UIViewController {
         setDelegates()
     }
     
+    //MARK: - LogIn User
+    
+    private func loginUser(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            guard let result = authResult,
+                  error == nil else {
+                self.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+                return
+            }
+            print(result.user)
+        }
+    }
+    
     //MARK: - Behaviour
     
     @objc private func backButtonPressed() {
@@ -40,9 +54,9 @@ final class LoginViewController: UIViewController {
               !email.isEmpty,
               !password.isEmpty, password.count >= 6
         else {
-            return showAlert(title: "Ошибка ввода",
-                             message: "Проверьте всю введенную информацию.")
+            return
         }
+        loginUser(email: email, password: password)
     }
     
     private func setTargets() {
