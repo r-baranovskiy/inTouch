@@ -1,5 +1,4 @@
 import UIKit
-import FirebaseAuth
 
 class ConversationsViewController: UIViewController {
     
@@ -16,14 +15,14 @@ class ConversationsViewController: UIViewController {
     
     //MARK: - Behaviour
     
-    @objc private func logOut() {
-        do {
-            try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
-        } catch let signOutError as NSError {
-            print(signOutError.localizedDescription)
-        }
-    }
+//    @objc private func logOut() {
+//        do {
+//            try Auth.auth().signOut()
+//            navigationController?.popToRootViewController(animated: true)
+//        } catch let signOutError as NSError {
+//            print(signOutError.localizedDescription)
+//        }
+//    }
     
     //MARK: - Appearance
     
@@ -31,6 +30,6 @@ class ConversationsViewController: UIViewController {
         view.backgroundColor = .white
         
         navigationItem.hidesBackButton = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOut))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOut))
     }
 }

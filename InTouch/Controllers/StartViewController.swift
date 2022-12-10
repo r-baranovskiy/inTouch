@@ -1,5 +1,4 @@
 import UIKit
-import FirebaseAuth
 
 class StartViewController: UIViewController {
     
@@ -20,7 +19,6 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         setAppearance()
         setTargets()
-        checkOnLoginUser()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,11 +28,11 @@ class StartViewController: UIViewController {
     
     //MARK: - Behaviour
     
-    private func checkOnLoginUser() {
-        if Auth.auth().currentUser != nil {
-            navigationController?.pushViewController(ConversationsViewController(), animated: false)
-        }
-    }
+//    private func checkOnLoginUser() {
+//        if Auth.auth().currentUser != nil {
+//            navigationController?.pushViewController(ConversationsViewController(), animated: false)
+//        }
+//    }
     
     @objc private func registerButtonWasPressed() {
         navigationController?.pushViewController(RegisterViewController(), animated: false)
@@ -58,7 +56,7 @@ class StartViewController: UIViewController {
     private func setAppearance() {
         navigationController?.navigationBar.topItem?.backButtonTitle = "Назад"
         navigationController?.navigationBar.tintColor = .label
-        loginButton = startView.logInButton
+        loginButton = startView.loginButton
         registerButton = startView.registerButton
     }
 }

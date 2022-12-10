@@ -1,5 +1,4 @@
 import UIKit
-import FirebaseAuth
 
 final class LoginViewController: UIViewController {
     
@@ -27,20 +26,20 @@ final class LoginViewController: UIViewController {
     
     //MARK: - LogIn User
     
-    private func loginUser(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            guard let strongSelf = self else {
-                return
-            }
-            
-            guard authResult != nil,
-                  error == nil else {
-                strongSelf.showAlert(title: "Error", message: error?.localizedDescription ?? "")
-                return
-            }
-            strongSelf.navigationController?.pushViewController(ConversationsViewController(), animated: true)
-        }
-    }
+//    private func loginUser(email: String, password: String) {
+//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+//            guard let strongSelf = self else {
+//                return
+//            }
+//
+//            guard authResult != nil,
+//                  error == nil else {
+//                strongSelf.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+//                return
+//            }
+//            strongSelf.navigationController?.pushViewController(ConversationsViewController(), animated: true)
+//        }
+//    }
     
     //MARK: - Behaviour
     
@@ -55,7 +54,7 @@ final class LoginViewController: UIViewController {
         else {
             return
         }
-        loginUser(email: email, password: password)
+//        loginUser(email: email, password: password)
     }
     
     private func setTargets() {

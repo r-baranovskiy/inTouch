@@ -62,22 +62,22 @@ final class LoginView: UIView {
         passwordTextField.isSecureTextEntry = true
         
         forgetButton = UIButton(type: .system)
-            .initButton(title: "Забыли пароль?",
-                        titleFor: .normal,
-                        titleFont: .boldSystemFont(ofSize: 18),
-                        backColor: .clear,
-                        titleColor: .label,
-                        titleColorFor: .normal,
-                        radius: 0)
+//            .initButton(title: "Забыли пароль?",
+//                        titleFor: .normal,
+//                        titleFont: .boldSystemFont(ofSize: 18),
+//                        backColor: .clear,
+//                        titleColor: .label,
+//                        titleColorFor: .normal,
+//                        radius: 0)
         
         loginButton = UIButton(type: .system)
-            .initButton(title: "Войти",
-                        titleFor: .normal,
-                        titleFont: .boldSystemFont(ofSize: 25),
-                        backColor: .lightGray,
-                        titleColor: .label,
-                        titleColorFor: .normal,
-                        radius: 15)
+//            .initButton(title: "Войти",
+//                        titleFor: .normal,
+//                        titleFont: .boldSystemFont(ofSize: 25),
+//                        backColor: .lightGray,
+//                        titleColor: .label,
+//                        titleColorFor: .normal,
+//                        radius: 15)
         
         containerView.addSubiewWithoutAutoresizing(emailTextField)
         containerView.addSubiewWithoutAutoresizing(passwordTextField)

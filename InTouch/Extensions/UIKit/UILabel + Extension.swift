@@ -1,13 +1,22 @@
 import UIKit
 
 extension UILabel {
-    func initLabel(text: String, font: UIFont, color: UIColor, textAlignment: NSTextAlignment, adjustsFontSizeToFitWidth: Bool, minimumScaleFactor: CGFloat) -> UILabel{
+    
+    convenience init(text: String,
+                     font: UIFont?,
+                     textColor: UIColor,
+                     adjustsFontSizeToFitWidth: Bool,
+                     minimumScale: CGFloat = 0.3,
+                     alignment: NSTextAlignment = .left) {
+        self.init()
         self.text = text
+        self.textColor = textColor
         self.font = font
-        self.textColor = color
-        self.textAlignment = textAlignment
-        self.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
-        self.minimumScaleFactor = minimumScaleFactor
-        return self
+        self.textAlignment = alignment
+        
+        if adjustsFontSizeToFitWidth {
+            self.minimumScaleFactor = minimumScale
+        }
     }
+    
 }

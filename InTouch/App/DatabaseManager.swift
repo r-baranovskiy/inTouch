@@ -1,37 +1,36 @@
 import Foundation
-import FirebaseDatabase
 
 final class DatabaseManager {
     
     static let shared = DatabaseManager()
     
-    private let database = Database.database().reference()
+//    private let database = Database.database().reference()
 }
 
 //MARK: - Account management
 
-extension DatabaseManager {
-    
-    public func userExists(with email: String,
-                           completion: @escaping((Bool) -> Void)) {
-        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
-        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
-        
-        database.child(safeEmail).observeSingleEvent(of: .value) { snapshot in
-            guard snapshot.value as? String != nil else {
-                completion(false)
-                return
-            }
-            completion(true)
-        }
-    }
+//extension DatabaseManager {
+//    
+//    public func userExists(with email: String,
+//                           completion: @escaping((Bool) -> Void)) {
+//        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+//        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+//        
+//        database.child(safeEmail).observeSingleEvent(of: .value) { snapshot in
+//            guard snapshot.value as? String != nil else {
+//                completion(false)
+//                return
+//            }
+//            completion(true)
+//        }
+//    }
     
     // adding new user to database
     
-    public func addUser(with user: ChatUser) {
-        database.child(user.safeEmail).setValue([
-            "first_name" : user.firstName,
-            "last_name" : user.lastName,
-        ])
-    }
-}
+//    public func addUser(with user: ChatUser) {
+//        database.child(user.safeEmail).setValue([
+//            "first_name" : user.firstName,
+//            "last_name" : user.lastName,
+//        ])
+//    }
+//}

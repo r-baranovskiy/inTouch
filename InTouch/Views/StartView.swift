@@ -2,35 +2,59 @@ import UIKit
 
 class StartView: UIView {
     
-    //MARK: - UI Constants
+    //MARK: - Constants
+    
     private var timeIntervalAnimate = 0.5
-    
-    private var mainLabel = UILabel()
-    private var propertyStackView = UIStackView()
-    private var communicatePropertyLabel = UILabel()
-    private var sharePropertyLabel = UILabel()
-    private var shareLocationLabel = UILabel()
-    private var stayInTouchLabel = UILabel()
-    
-    private var buttonsStackView = UIStackView()
-    private (set) var logInButton = UIButton()
-    private (set) var registerButton = UIButton()
-    
     private var backgroundImageView: UIImageView {
         return UIImageView(image: UIImage(named: KeysImages.backgroundImage.rawValue))
     }
     
-    //MARK: - Override
+    //Labels
+    private let mainLabel = UILabel(text: "",
+                                    font: UIFont(name: KeysFont.logoFont.rawValue,
+                                                 size: 80),
+                                    textColor: .label,
+                                    adjustsFontSizeToFitWidth: true,
+                                    alignment: .center)
+    
+    private let communicatePropertyLabel = UILabel(text: "📨  Общайся со своими друзьями",
+                                                   font: .propertyFont(),
+                                                   textColor: .label,
+                                                   adjustsFontSizeToFitWidth: true)
+    
+    private let sharePhotosLabel = UILabel(text: "🏞️  Делись фото и видео",
+                                           font: .propertyFont(),
+                                           textColor: .label,
+                                           adjustsFontSizeToFitWidth: true)
+    
+    private let shareLocationLabel = UILabel(text: "⛱️  Покажи где ты находишься",
+                                             font: .propertyFont(),
+                                             textColor: .label,
+                                             adjustsFontSizeToFitWidth: true)
+    
+    private let stayInTouchLabel = UILabel(text: "🌝  Оставайся всегда на связи",
+                                           font: .propertyFont(),
+                                           textColor: .label,
+                                           adjustsFontSizeToFitWidth: true)
+    
+    //Buttons
+    var loginButton = LoginRegistrationButton(text: "Войти", isShadow: true)
+    let registerButton = LoginRegistrationButton(text: "Регистрация", isShadow: true)
+    
+    //Containers
+    private var propertyStackView = UIStackView()
+    private var buttonsStackView = UIStackView()
+    
+    //MARK: - Init
     
     override init(frame: CGRect) {
         super .init(frame: frame)
         showAnimatedMainLabel()
         configurePropertyStackView()
         configureButtonsStackView()
-        
         backgroundImageView.frame = self.frame
         
-        addSubiewWithoutAutoresizing(backgroundImageView)
+        addSubview(backgroundImageView)
         addSubiewWithoutAutoresizing(mainLabel)
         addSubiewWithoutAutoresizing(propertyStackView)
         addSubiewWithoutAutoresizing(buttonsStackView)
@@ -47,15 +71,6 @@ class StartView: UIView {
     private func showAnimatedMainLabel() {
         let nameLabel = "In Touch"
         var charIndex = 0.0
-        mainLabel = UILabel()
-            .initLabel(text: "",
-                       font: UIFont(name: KeysFont.logoFont.rawValue, size: 80)
-                       ?? .systemFont(ofSize: 80),
-                       color: .label,
-                       textAlignment: .center,
-                       adjustsFontSizeToFitWidth: true,
-                       minimumScaleFactor: 0.5)
-        
         
         for char in nameLabel {
             Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { _ in
@@ -75,7 +90,7 @@ class StartView: UIView {
             self.communicatePropertyLabel.alpha = 1
         } completion: { _ in
             UIView.animate(withDuration: time) {
-                self.sharePropertyLabel.alpha = 1
+                self.sharePhotosLabel.alpha = 1
             } completion: { _ in
                 UIView.animate(withDuration: time) {
                     self.shareLocationLabel.alpha = 1
@@ -85,9 +100,9 @@ class StartView: UIView {
                     } completion: { _ in
                         UIView.animate(withDuration: time) {
                             self.registerButton.isHidden = false
-                            self.logInButton.isHidden = false
+                            self.loginButton.isHidden = false
                             self.registerButton.alpha = 0.7
-                            self.logInButton.alpha = 0.7
+                            self.loginButton.alpha = 0.7
                         }
                     }
                 }
@@ -96,86 +111,29 @@ class StartView: UIView {
     }
     
     private func configurePropertyStackView() {
-        var labelFont: UIFont {
-            return UIFont(name: "MarkerFelt-Thin", size: 20) ?? .systemFont(ofSize: 20)
-        }
+        propertyStackView = UIStackView(arrangedSubviews:
+                                            [communicatePropertyLabel,
+                                             sharePhotosLabel,
+                                             shareLocationLabel,
+                                             stayInTouchLabel],
+                                        axis: .vertical,
+                                        spacing: 20,
+                                        alignment: .leading)
         
-        communicatePropertyLabel = UILabel()
-            .initLabel(text: "📨  Общайся со своими друзьями",
-                       font: labelFont,
-                       color: .label,
-                       textAlignment: .left,
-                       adjustsFontSizeToFitWidth: true,
-                       minimumScaleFactor: 0.5)
-        
-        sharePropertyLabel = UILabel()
-            .initLabel(text: "🏞️  Делись фото и видео",
-                       font: labelFont,
-                       color: .label,
-                       textAlignment: .left,
-                       adjustsFontSizeToFitWidth: true,
-                       minimumScaleFactor: 0.5)
-        
-        shareLocationLabel = UILabel()
-            .initLabel(text: "⛱️  Покажи где ты находишься",
-                       font: labelFont,
-                       color: .label,
-                       textAlignment: .left,
-                       adjustsFontSizeToFitWidth: true,
-                       minimumScaleFactor: 0.5)
-        
-        stayInTouchLabel = UILabel()
-            .initLabel(text: "🌝  Оставайся всегда на связи",
-                       font: labelFont,
-                       color: .label,
-                       textAlignment: .left,
-                       adjustsFontSizeToFitWidth: true,
-                       minimumScaleFactor: 0.5)
-        
-        
-        let properties = [communicatePropertyLabel,
-                          sharePropertyLabel,
-                          shareLocationLabel,
-                          stayInTouchLabel]
-        
-        propertyStackView.spacing = 20
-        propertyStackView.axis = .vertical
-        propertyStackView.alignment = .leading
-        
-        for property in properties {
-            propertyStackView.addArrangedSubview(property)
+        for property in propertyStackView.arrangedSubviews {
             property.alpha = 0
         }
     }
     
     private func configureButtonsStackView() {
-        logInButton = UIButton(type: .system)
-            .initButton(title: "Вход",
-                        titleFor: .normal,
-                        titleFont: .boldSystemFont(ofSize: 30),
-                        backColor: .gray,
-                        titleColor: .label,
-                        titleColorFor: .normal,
-                        radius: 10)
+        buttonsStackView = UIStackView(arrangedSubviews:
+                                        [loginButton,
+                                         registerButton],
+                                       axis: .vertical,
+                                       spacing: 20,
+                                       alignment: .fill)
         
-        registerButton = UIButton(type: .system)
-            .initButton(title: "Регистрация",
-                        titleFor: .normal,
-                        titleFont: .boldSystemFont(ofSize: 30),
-                        backColor: .gray,
-                        titleColor: .label,
-                        titleColorFor: .normal,
-                        radius: 10)
-        
-        let elements = [logInButton, registerButton]
-        
-        buttonsStackView.spacing = 20
-        buttonsStackView.axis = .vertical
-        buttonsStackView.alignment = .fill
-        buttonsStackView.distribution = .fill
-        
-        for element in elements {
-            buttonsStackView.addArrangedSubview(element)
+        for element in buttonsStackView.arrangedSubviews {
             element.isHidden = true
             element.alpha = 0
         }
@@ -193,10 +151,14 @@ class StartView: UIView {
             propertyStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             propertyStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             
-            buttonsStackView.topAnchor.constraint(equalTo: propertyStackView.bottomAnchor, constant: 30),
-            buttonsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            buttonsStackView.topAnchor.constraint(greaterThanOrEqualTo: propertyStackView.bottomAnchor, constant: 50),
+            buttonsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
             buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80),
         ])
     }
 }
+
+
+
+

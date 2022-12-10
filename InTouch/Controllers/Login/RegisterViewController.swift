@@ -1,5 +1,4 @@
 import UIKit
-import FirebaseAuth
 
 final class RegisterViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -44,30 +43,30 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
             return showAlert(title: "Ошибка ввода",
                              message: "Проверьте всю введенную информацию.")
         }
-        createUser(email: email, password: password, firstName: firstName, lastName: lastName)
+//        createUser(email: email, password: password, firstName: firstName, lastName: lastName)
     }
     
-    private func createUser(email: String, password: String, firstName: String, lastName: String) {
-        DatabaseManager.shared.userExists(with: email) { [weak self] isExist in
-            guard let strongSelf = self else {
-                return
-            }
-            
-            if !isExist {
-                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                    guard authResult != nil,
-                          error == nil else {
-                        strongSelf.showAlert(title: "Ошибка", message: error?.localizedDescription ?? "")
-                        return
-                    }
-                }
-            } else {
-                strongSelf.showAlert(title: "Пользователь с таким email уже существует", message: "")
-            }
-            DatabaseManager.shared.addUser(with: ChatUser(firstName: firstName, lastName: lastName, emailAddress: email))
-            strongSelf.navigationController?.pushViewController(ConversationsViewController(), animated: true)
-        }
-    }
+//    private func createUser(email: String, password: String, firstName: String, lastName: String) {
+//        DatabaseManager.shared.userExists(with: email) { [weak self] isExist in
+//            guard let strongSelf = self else {
+//                return
+//            }
+//            
+//            if !isExist {
+//                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//                    guard authResult != nil,
+//                          error == nil else {
+//                        strongSelf.showAlert(title: "Ошибка", message: error?.localizedDescription ?? "")
+//                        return
+//                    }
+//                }
+//            } else {
+//                strongSelf.showAlert(title: "Пользователь с таким email уже существует", message: "")
+//            }
+//            DatabaseManager.shared.addUser(with: ChatUser(firstName: firstName, lastName: lastName, emailAddress: email))
+//            strongSelf.navigationController?.pushViewController(ConversationsViewController(), animated: true)
+//        }
+//    }
     
     //MARK: - Behaviour
     

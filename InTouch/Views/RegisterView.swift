@@ -125,12 +125,12 @@ class RegisterView: UIView {
     
     private func createRegisterButton() {
         registerButton = UIButton(type: .system)
-            .initButton(title: "Регистрация",
-                        titleFor: .normal,
-                        titleFont: .boldSystemFont(ofSize: 25),
-                        backColor: .lightGray, titleColor: .label,
-                        titleColorFor: .normal,
-                        radius: 15)
+//            .initButton(title: "Регистрация",
+//                        titleFor: .normal,
+//                        titleFont: .boldSystemFont(ofSize: 25),
+//                        backColor: .lightGray, titleColor: .label,
+//                        titleColorFor: .normal,
+//                        radius: 15)
     }
     
     //MARK: - Constraints
