@@ -86,6 +86,7 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
+            //self.navigationController?.isNavigationBarHidden = false
         }
     }
     
@@ -110,6 +111,16 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
 //MARK: - UITextFieldDelegate
 
 extension RegisterViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.navigationController?.isNavigationBarHidden = true
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case firstNameTextField:
