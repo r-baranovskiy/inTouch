@@ -1,6 +1,6 @@
 import UIKit
 
-class LoginRegistrationButton: UIButton {
+class ButtonForLoginRegistration: UIButton {
     
     convenience init(text: String, isShadow: Bool) {
         self.init()

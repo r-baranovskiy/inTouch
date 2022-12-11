@@ -1,6 +1,6 @@
 import UIKit
 
-class TextFieldForLogin: UITextField {
+class TextFieldForLoginRegistration: UITextField {
     
     convenience init(placeholder: String,
                      keyboardType: UIKeyboardType = .default,

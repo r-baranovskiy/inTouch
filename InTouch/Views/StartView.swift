@@ -38,8 +38,8 @@ class StartView: UIView {
                                            adjustsFontSizeToFitWidth: true)
     
     //Buttons
-    let loginButton = LoginRegistrationButton(text: "Войти", isShadow: true)
-    let registerButton = LoginRegistrationButton(text: "Регистрация", isShadow: true)
+    let loginButton = ButtonForLoginRegistration(text: "Войти", isShadow: true)
+    let registerButton = ButtonForLoginRegistration(text: "Регистрация", isShadow: true)
     
     //Containers
     private var propertyStackView = UIStackView()

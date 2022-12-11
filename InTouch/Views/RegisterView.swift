@@ -12,20 +12,20 @@ class RegisterView: UIView {
     private var fieldsStackView = UIStackView()
     
     //TextFields
-    private (set) var firstNameTextField = TextFieldForLogin(placeholder: "Имя",
+    let firstNameTextField = TextFieldForLoginRegistration(placeholder: "Имя",
                                                              autocapitalization: .words)
-    private (set) var lastNameTextField = TextFieldForLogin(placeholder: "Фамилия",
+    let lastNameTextField = TextFieldForLoginRegistration(placeholder: "Фамилия",
                                                             autocapitalization: .words)
-    private (set) var emailTextField = TextFieldForLogin(placeholder: "Email",
+    let emailTextField = TextFieldForLoginRegistration(placeholder: "Email",
                                                          keyboardType: .emailAddress)
-    private (set) var passwordTextField = TextFieldForLogin(placeholder: "Пароль",
+    let passwordTextField = TextFieldForLoginRegistration(placeholder: "Пароль",
                                                             isSecure: true)
-    private (set) var confirmPasswordTextField = TextFieldForLogin(placeholder: "Подтвердите пароль",
+    let confirmPasswordTextField = TextFieldForLoginRegistration(placeholder: "Подтвердите пароль",
                                                                    returnKeyType: .join,
                                                                    isSecure: true)
     
     //Buttons
-    private (set) var registerButton = LoginRegistrationButton(text: "Регистрация",
+    let registerButton = ButtonForLoginRegistration(text: "Регистрация",
                                                                isShadow: false)
     //MARK: - Override
     

@@ -86,7 +86,6 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
-            //self.navigationController?.isNavigationBarHidden = false
         }
     }
     

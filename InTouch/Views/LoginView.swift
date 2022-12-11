@@ -12,20 +12,29 @@ final class LoginView: UIView {
     
     private var containerView = UIView()
     
-    private (set) var emailTextField = UITextField()
-    private (set) var passwordTextField = UITextField()
-    private (set) var loginButton = UIButton()
-    private (set) var forgetButton = UIButton()
+    private let googleLabel = UILabel(text: "Войти через:",
+                                      font: .avenir20(),
+                                      textColor: .label,
+                                      adjustsFontSizeToFitWidth: false)
+    
+    //TextFields
+    let emailTextField = TextFieldForLoginRegistration(placeholder: "Email",
+                                                                     keyboardType: .emailAddress)
+    let passwordTextField = TextFieldForLoginRegistration(placeholder: "Password",
+                                                          isSecure: true)
+    //Buttons
+    let loginButton = ButtonForLoginRegistration(text: "Войти", isShadow: false)
+    
+    let googleButton = ButtonForLoginRegistration(text: "Google", isShadow: true)
+    
+    private (set) var forgetButton = UIButton(type: .system)
     
     //MARK: - Override
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        configureContainerView()
-        
-        addSubview(backgroundImageView)
-        addSubiewWithoutAutoresizing(containerView)
-        
+        addSubviews()
+        uiSettings()
         setConstraints()
     }
     
@@ -33,56 +42,25 @@ final class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureContainerView() {
-//        emailTextField = UITextField()
-//            .initTextField(font: .boldSystemFont(ofSize: 20),
-//                           autocapitalization: .none,
-//                           autocorrection: .no,
-//                           keyboard: .emailAddress,
-//                           border: .roundedRect,
-//                           placeholder: "Email",
-//                           textColor: .label)
-        emailTextField.returnKeyType = .continue
-        emailTextField.layer.cornerRadius = 12
-        emailTextField.layer.borderWidth = 1
-        emailTextField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        passwordTextField = UITextField()
-//            .initTextField(font: .boldSystemFont(ofSize: 20),
-//                           autocapitalization: .none,
-//                           autocorrection: .no,
-//                           keyboard: .default,
-//                           border: .roundedRect,
-//                           placeholder: "Password",
-//                           textColor: .label)
-        passwordTextField.returnKeyType = .done
-        passwordTextField.layer.cornerRadius = 12
-        passwordTextField.layer.borderWidth = 1
-        passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
-        passwordTextField.isSecureTextEntry = true
-        
-        forgetButton = UIButton(type: .system)
-//            .initButton(title: "Забыли пароль?",
-//                        titleFor: .normal,
-//                        titleFont: .boldSystemFont(ofSize: 18),
-//                        backColor: .clear,
-//                        titleColor: .label,
-//                        titleColorFor: .normal,
-//                        radius: 0)
-        
-        loginButton = UIButton(type: .system)
-//            .initButton(title: "Войти",
-//                        titleFor: .normal,
-//                        titleFont: .boldSystemFont(ofSize: 25),
-//                        backColor: .lightGray,
-//                        titleColor: .label,
-//                        titleColorFor: .normal,
-//                        radius: 15)
-        
+    private func addSubviews() {
+        backgroundImageView.frame = self.frame
+        addSubview(backgroundImageView)
+        addSubiewWithoutAutoresizing(containerView)
         containerView.addSubiewWithoutAutoresizing(emailTextField)
         containerView.addSubiewWithoutAutoresizing(passwordTextField)
         containerView.addSubiewWithoutAutoresizing(forgetButton)
         containerView.addSubiewWithoutAutoresizing(loginButton)
+        containerView.addSubiewWithoutAutoresizing(googleLabel)
+        containerView.addSubiewWithoutAutoresizing(googleButton)
+    }
+    
+    private func uiSettings() {
+        forgetButton.setTitle("Забыли пароль?", for: .normal)
+        forgetButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
+        forgetButton.setTitleColor(.red, for: .normal)
+        
+        googleButton.backgroundColor = .white
+        googleButton.setTitleColor(.darkGray, for: .normal)
     }
     
     //MARK: - Constraints
@@ -110,9 +88,18 @@ final class LoginView: UIView {
             forgetButton.heightAnchor.constraint(equalToConstant: 20),
             
             loginButton.topAnchor.constraint(equalTo: forgetButton.bottomAnchor, constant: 20),
-            loginButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            loginButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            loginButton.heightAnchor.constraint(equalToConstant: 40)
+            loginButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 40),
+            loginButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -40),
+            loginButton.heightAnchor.constraint(equalToConstant: 54),
+            
+            googleLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 40),
+            googleLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            
+            googleButton.topAnchor.constraint(equalTo: googleLabel.bottomAnchor, constant: 20),
+            googleButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 40),
+            googleButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -40)
         ])
     }
 }
+
+
