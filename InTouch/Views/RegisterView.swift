@@ -26,7 +26,7 @@ class RegisterView: UIView {
     
     //Buttons
     let registerButton = CustomButton(text: "Регистрация",
-                                                               isShadow: false)
+                                      isShadow: false)
     //MARK: - Override
     
     override init(frame: CGRect) {

@@ -12,3 +12,7 @@ enum KeysImages: String {
     case backgroundImage = "backgroundImage"
     case emptyPhoto = "emptyPhoto"
 }
+
+enum KeysButtons: String {
+    case backButton = "arrowshape.turn.up.backward"
+}

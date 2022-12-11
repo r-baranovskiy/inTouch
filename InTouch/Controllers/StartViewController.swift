@@ -38,18 +38,20 @@ class StartViewController: UIViewController {
     }
     
     @objc private func registerButtonPressed() {
-        navigationController?.pushViewController(RegisterViewController(), animated: false)
+        let registerVC = RegisterViewController()
+        registerVC.modalPresentationStyle = .fullScreen
+        present(registerVC, animated: false)
     }
     
     @objc private func loginButtonPressed() {
-        navigationController?.pushViewController(LoginViewController(), animated: false)
+        let loginVC = LoginViewController()
+        loginVC.modalPresentationStyle = .fullScreen
+        present(loginVC, animated: false)
     }
     
     //MARK: - Appearance
     
     private func setAppearance() {
-        navigationController?.navigationBar.topItem?.backButtonTitle = "Назад"
-        navigationController?.navigationBar.tintColor = .label
         loginButton = startView.loginButton
         registerButton = startView.registerButton
     }

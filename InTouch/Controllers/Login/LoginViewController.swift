@@ -9,6 +9,7 @@ final class LoginViewController: UIViewController {
     private var loginButton = UIButton()
     private var emailTextField = UITextField()
     private var passwordTextField = UITextField()
+    private var backButton = UIButton()
     
     //MARK: - Lifecycles
     
@@ -28,6 +29,19 @@ final class LoginViewController: UIViewController {
     
     //MARK: - Behaviour
     
+    private func setTargets() {
+        backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed),
+                              for: .touchUpInside)
+    }
+    
+    private func setDelegates() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    //MARK: - Objc buttons funcs
+    
     @objc private func loginButtonPressed() {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
@@ -41,14 +55,8 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    private func setTargets() {
-        loginButton.addTarget(self, action: #selector(loginButtonPressed),
-                              for: .touchUpInside)
-    }
-    
-    private func setDelegates() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+    @objc private func backButtonPressed() {
+        self.dismiss(animated: false)
     }
     
     //MARK: - Appearance
@@ -57,6 +65,7 @@ final class LoginViewController: UIViewController {
         loginButton = logivView.loginButton
         emailTextField = logivView.emailTextField
         passwordTextField = logivView.passwordTextField
+        backButton = logivView.backButton
     }
 }
 
