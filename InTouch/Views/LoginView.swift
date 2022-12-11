@@ -19,13 +19,12 @@ final class LoginView: UIView {
     
     //TextFields
     let emailTextField = TextFieldForLoginRegistration(placeholder: "Email",
-                                                                     keyboardType: .emailAddress)
+                                                       keyboardType: .emailAddress)
     let passwordTextField = TextFieldForLoginRegistration(placeholder: "Password",
                                                           isSecure: true)
     //Buttons
-    let loginButton = ButtonForLoginRegistration(text: "Войти", isShadow: false)
-    
-    let googleButton = ButtonForLoginRegistration(text: "Google", isShadow: true)
+    let loginButton = CustomButton(text: "Войти", isShadow: false)
+    let googleButton = CustomButton(text: "Google", isShadow: true)
     
     private (set) var forgetButton = UIButton(type: .system)
     
@@ -35,6 +34,7 @@ final class LoginView: UIView {
         super .init(frame: frame)
         addSubviews()
         uiSettings()
+        CustomButton.customGoogleButton(googleButton)
         setConstraints()
     }
     

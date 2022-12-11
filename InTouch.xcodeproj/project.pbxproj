@@ -12,7 +12,7 @@
 		800B5CDD2926120800D9AECF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B5CDC2926120800D9AECF /* StartViewController.swift */; };
 		800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE12926120B00D9AECF /* Assets.xcassets */; };
 		800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE32926120B00D9AECF /* LaunchScreen.storyboard */; };
-		801B933A29461B6200F8EE36 /* TextFieldForLoginRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B933929461B6200F8EE36 /* TextFieldForLoginRegistration.swift */; };
+		801B933A29461B6200F8EE36 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B933929461B6200F8EE36 /* CustomTextFields.swift */; };
 		801B933C29462CAB00F8EE36 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B933B29462CAA00F8EE36 /* UIViewController + Extension.swift */; };
 		804303232939147F00CEC95D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804303222939147F00CEC95D /* GoogleService-Info.plist */; };
 		80430325293918CC00CEC95D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80430324293918CC00CEC95D /* DatabaseManager.swift */; };
@@ -32,7 +32,7 @@
 		80A6B02D29265ABC00A25042 /* beerMoney.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80A6B02C29265ABC00A25042 /* beerMoney.ttf */; };
 		80CD7B5F29451E6300CEFA91 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B5E29451E6300CEFA91 /* UIFont + Extension.swift */; };
 		80CD7B612945247400CEFA91 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B602945247400CEFA91 /* UIStackView + Extension.swift */; };
-		80CD7B662945310500CEFA91 /* ButtonForLoginRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B652945310500CEFA91 /* ButtonForLoginRegistration.swift */; };
+		80CD7B662945310500CEFA91 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B652945310500CEFA91 /* CustomButtons.swift */; };
 		80E076D7292752A300499ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D6292752A300499ECF /* LoginViewController.swift */; };
 		80E076D929278BED00499ECF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D829278BED00499ECF /* LoginView.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +44,7 @@
 		800B5CE12926120B00D9AECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		800B5CE42926120B00D9AECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		800B5CE62926120B00D9AECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		801B933929461B6200F8EE36 /* TextFieldForLoginRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldForLoginRegistration.swift; sourceTree = "<group>"; };
+		801B933929461B6200F8EE36 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
 		801B933B29462CAA00F8EE36 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		804303212938DC8100CEC95D /* InTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		804303222939147F00CEC95D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		80A6B02C29265ABC00A25042 /* beerMoney.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beerMoney.ttf; sourceTree = "<group>"; };
 		80CD7B5E29451E6300CEFA91 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		80CD7B602945247400CEFA91 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
-		80CD7B652945310500CEFA91 /* ButtonForLoginRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonForLoginRegistration.swift; sourceTree = "<group>"; };
+		80CD7B652945310500CEFA91 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		80E076D6292752A300499ECF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80E076D829278BED00499ECF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,8 +215,8 @@
 		80CD7B64294530EA00CEFA91 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
-				80CD7B652945310500CEFA91 /* ButtonForLoginRegistration.swift */,
-				801B933929461B6200F8EE36 /* TextFieldForLoginRegistration.swift */,
+				80CD7B652945310500CEFA91 /* CustomButtons.swift */,
+				801B933929461B6200F8EE36 /* CustomTextFields.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -314,11 +314,11 @@
 				80CD7B612945247400CEFA91 /* UIStackView + Extension.swift in Sources */,
 				80430325293918CC00CEC95D /* DatabaseManager.swift in Sources */,
 				80A6B02A2926594000A25042 /* UIView + Extension.swift in Sources */,
-				801B933A29461B6200F8EE36 /* TextFieldForLoginRegistration.swift in Sources */,
+				801B933A29461B6200F8EE36 /* CustomTextFields.swift in Sources */,
 				80545E152926C1510084222E /* UILabel + Extension.swift in Sources */,
 				80E076D7292752A300499ECF /* LoginViewController.swift in Sources */,
 				80A6B0252926561800A25042 /* RegisterView.swift in Sources */,
-				80CD7B662945310500CEFA91 /* ButtonForLoginRegistration.swift in Sources */,
+				80CD7B662945310500CEFA91 /* CustomButtons.swift in Sources */,
 				80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */,
 				80A6B023292653A700A25042 /* Enums + Appearance.swift in Sources */,
 			);

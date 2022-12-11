@@ -40,15 +40,26 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     @objc private func registerButtonPressed() {
         guard let email = emailTextField.text,
               let password = passwordTextField.text,
+              let confirmPassword = confirmPasswordTextField.text,
               let firstName = firstNameTextField.text,
               let lastName = lastNameTextFeld.text,
               !email.isEmpty,
               !password.isEmpty,
+              !confirmPassword.isEmpty,
               !firstName.isEmpty,
-              !lastName.isEmpty,
-              password.count >= 6 else {
+              !lastName.isEmpty else {
             return showAlert(title: "Ошибка ввода",
                              message: "Проверьте всю введенную информацию.")
+        }
+        
+        if confirmPassword != password {
+            showAlert(title: "Пароли не совпадают", message: "")
+            return
+        }
+        
+        if password.count < 6 {
+            showAlert(title: "Неверный пароль", message: "Пароль должен содержать не менее 6-и символов")
+            return
         }
     }
     
@@ -73,6 +84,14 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
         userPhotoView.addGestureRecognizer(photoTapRecognizer)
     }
     
+    private func setDelegates() {
+        firstNameTextField.delegate = self
+        lastNameTextFeld.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+    }
+    
     //MARK: - Appearance
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -87,13 +106,6 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
-    }
-    
-    private func setDelegates() {
-        firstNameTextField.delegate = self
-        lastNameTextFeld.delegate = self
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
     }
     
     private func setAppearance() {
@@ -194,4 +206,3 @@ extension RegisterViewController: UIImagePickerControllerDelegate {
         picker.dismiss(animated: true)
     }
 }
-

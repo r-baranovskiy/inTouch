@@ -25,7 +25,7 @@ class RegisterView: UIView {
                                                                    isSecure: true)
     
     //Buttons
-    let registerButton = ButtonForLoginRegistration(text: "Регистрация",
+    let registerButton = CustomButton(text: "Регистрация",
                                                                isShadow: false)
     //MARK: - Override
     
@@ -94,7 +94,7 @@ class RegisterView: UIView {
             registerButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -40),
             registerButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
             registerButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80),
-            registerButton.heightAnchor.constraint(equalToConstant: 44)
+            registerButton.heightAnchor.constraint(equalToConstant: 54)
         ])
     }
 }
