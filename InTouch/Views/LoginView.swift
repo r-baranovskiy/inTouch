@@ -34,27 +34,27 @@ final class LoginView: UIView {
     }
     
     private func configureContainerView() {
-        emailTextField = UITextField()
-            .initTextField(font: .boldSystemFont(ofSize: 20),
-                           autocapitalization: .none,
-                           autocorrection: .no,
-                           keyboard: .emailAddress,
-                           border: .roundedRect,
-                           placeholder: "Email",
-                           textColor: .label)
+//        emailTextField = UITextField()
+//            .initTextField(font: .boldSystemFont(ofSize: 20),
+//                           autocapitalization: .none,
+//                           autocorrection: .no,
+//                           keyboard: .emailAddress,
+//                           border: .roundedRect,
+//                           placeholder: "Email",
+//                           textColor: .label)
         emailTextField.returnKeyType = .continue
         emailTextField.layer.cornerRadius = 12
         emailTextField.layer.borderWidth = 1
         emailTextField.layer.borderColor = UIColor.lightGray.cgColor
         
         passwordTextField = UITextField()
-            .initTextField(font: .boldSystemFont(ofSize: 20),
-                           autocapitalization: .none,
-                           autocorrection: .no,
-                           keyboard: .default,
-                           border: .roundedRect,
-                           placeholder: "Password",
-                           textColor: .label)
+//            .initTextField(font: .boldSystemFont(ofSize: 20),
+//                           autocapitalization: .none,
+//                           autocorrection: .no,
+//                           keyboard: .default,
+//                           border: .roundedRect,
+//                           placeholder: "Password",
+//                           textColor: .label)
         passwordTextField.returnKeyType = .done
         passwordTextField.layer.cornerRadius = 12
         passwordTextField.layer.borderWidth = 1

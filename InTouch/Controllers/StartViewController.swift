@@ -28,27 +28,21 @@ class StartViewController: UIViewController {
     
     //MARK: - Behaviour
     
-//    private func checkOnLoginUser() {
-//        if Auth.auth().currentUser != nil {
-//            navigationController?.pushViewController(ConversationsViewController(), animated: false)
-//        }
-//    }
+    private func setTargets() {
+        loginButton.addTarget(self,
+                              action: #selector(loginButtonPressed),
+                              for: .touchUpInside)
+        registerButton.addTarget(self,
+                                 action: #selector(registerButtonPressed),
+                                 for: .touchUpInside)
+    }
     
-    @objc private func registerButtonWasPressed() {
+    @objc private func registerButtonPressed() {
         navigationController?.pushViewController(RegisterViewController(), animated: false)
     }
     
-    @objc private func loginButtonWasPressed() {
+    @objc private func loginButtonPressed() {
         navigationController?.pushViewController(LoginViewController(), animated: false)
-    }
-    
-    private func setTargets() {
-        loginButton.addTarget(self,
-                              action: #selector(loginButtonWasPressed),
-                              for: .touchUpInside)
-        registerButton.addTarget(self,
-                                 action: #selector(registerButtonWasPressed),
-                                 for: .touchUpInside)
     }
     
     //MARK: - Appearance

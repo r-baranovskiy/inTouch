@@ -10,6 +10,7 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     private var lastNameTextFeld = UITextField()
     private var emailTextField = UITextField()
     private var passwordTextField = UITextField()
+    private var confirmPasswordTextField = UITextField()
     private var userPhotoView = UIImageView()
     
     
@@ -26,6 +27,12 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
         setTargets()
         setDelegates()
         setTapRecognizer()
+        
+        hideKeyboardWhenTappedAround()
+        
+        //Notification for keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     //MARK: - Registration
@@ -43,30 +50,9 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
             return showAlert(title: "Ошибка ввода",
                              message: "Проверьте всю введенную информацию.")
         }
-//        createUser(email: email, password: password, firstName: firstName, lastName: lastName)
     }
     
-//    private func createUser(email: String, password: String, firstName: String, lastName: String) {
-//        DatabaseManager.shared.userExists(with: email) { [weak self] isExist in
-//            guard let strongSelf = self else {
-//                return
-//            }
-//            
-//            if !isExist {
-//                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//                    guard authResult != nil,
-//                          error == nil else {
-//                        strongSelf.showAlert(title: "Ошибка", message: error?.localizedDescription ?? "")
-//                        return
-//                    }
-//                }
-//            } else {
-//                strongSelf.showAlert(title: "Пользователь с таким email уже существует", message: "")
-//            }
-//            DatabaseManager.shared.addUser(with: ChatUser(firstName: firstName, lastName: lastName, emailAddress: email))
-//            strongSelf.navigationController?.pushViewController(ConversationsViewController(), animated: true)
-//        }
-//    }
+    
     
     //MARK: - Behaviour
     
@@ -89,11 +75,18 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
     
     //MARK: - Appearance
     
-    private func hideKeyboard() {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        firstNameTextField.resignFirstResponder()
-        lastNameTextFeld.resignFirstResponder()
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     private func setDelegates() {
@@ -110,6 +103,7 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
         lastNameTextFeld = registerView.lastNameTextField
         emailTextField = registerView.emailTextField
         passwordTextField = registerView.passwordTextField
+        confirmPasswordTextField = registerView.confirmPasswordTextField
     }
 }
 
@@ -125,6 +119,8 @@ extension RegisterViewController: UITextFieldDelegate {
         case emailTextField:
             passwordTextField.becomeFirstResponder()
         case passwordTextField:
+            confirmPasswordTextField.becomeFirstResponder()
+        case confirmPasswordTextField:
             registerButtonPressed()
         default:
             break

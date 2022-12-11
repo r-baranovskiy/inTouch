@@ -38,7 +38,7 @@ class StartView: UIView {
                                            adjustsFontSizeToFitWidth: true)
     
     //Buttons
-    var loginButton = LoginRegistrationButton(text: "Войти", isShadow: true)
+    let loginButton = LoginRegistrationButton(text: "Войти", isShadow: true)
     let registerButton = LoginRegistrationButton(text: "Регистрация", isShadow: true)
     
     //Containers
@@ -152,13 +152,9 @@ class StartView: UIView {
             propertyStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             
             buttonsStackView.topAnchor.constraint(greaterThanOrEqualTo: propertyStackView.bottomAnchor, constant: 50),
-            buttonsStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            buttonsStackView.bottomAnchor.constraint(lessThanOrEqualTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 80),
             buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -80),
         ])
     }
 }
-
-
-
-
