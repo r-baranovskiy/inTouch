@@ -13,6 +13,7 @@ enum KeysImages: String {
     case emptyPhoto = "emptyPhoto"
 }
 
-enum KeysButtons: String {
+enum KeysButtonsImages: String {
     case backButton = "arrowshape.turn.up.backward"
+    case addPhoto = "person.crop.circle.fill.badge.plus"
 }

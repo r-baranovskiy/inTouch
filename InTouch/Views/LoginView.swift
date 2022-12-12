@@ -3,13 +3,7 @@ import UIKit
 final class LoginView: UIView {
     
     //MARK: - UI Constants
-    
-    private var backgroundImageView: UIImageView {
-        return UIImageView(image: UIImage(named: KeysImages.backgroundImage.rawValue))
-    }
-    
-    private let backgroundButtonColor = UIColor(named: KeysColor.buttonsBackColor.rawValue) ?? .gray
-    
+        
     private var containerView = UIView()
     
     private let googleLabel = UILabel(text: "Войти через:",
@@ -18,15 +12,14 @@ final class LoginView: UIView {
                                       adjustsFontSizeToFitWidth: false)
     
     //TextFields
-    let emailTextField = TextFieldForLoginRegistration(placeholder: "Email",
+    let emailTextField = CustomTextField(placeholder: "Email",
                                                        keyboardType: .emailAddress)
-    let passwordTextField = TextFieldForLoginRegistration(placeholder: "Password",
+    let passwordTextField = CustomTextField(placeholder: "Password",
                                                           isSecure: true)
     //Buttons
     let loginButton = CustomButton(text: "Войти", isShadow: false)
     let googleButton = CustomButton(text: "Google", isShadow: true)
-    
-    private (set) var backButton = UIButton(type: .system)
+    let backButton = CustomButton.backButton()
     private (set) var forgetButton = UIButton(type: .system)
     
     //MARK: - Override
@@ -34,8 +27,7 @@ final class LoginView: UIView {
     override init(frame: CGRect) {
         super .init(frame: frame)
         addSubviews()
-        setUIForButtons()
-        
+        ConfigureUI()
         setConstraints()
     }
     
@@ -43,9 +35,9 @@ final class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Configure
+    
     private func addSubviews() {
-        backgroundImageView.frame = self.frame
-        addSubview(backgroundImageView)
         addSubiewWithoutAutoresizing(backButton)
         addSubiewWithoutAutoresizing(containerView)
         containerView.addSubiewWithoutAutoresizing(emailTextField)
@@ -56,7 +48,13 @@ final class LoginView: UIView {
         containerView.addSubiewWithoutAutoresizing(googleButton)
     }
     
-    private func setUIForButtons() {
+    private func ConfigureUI() {
+        if let backgroundImage = UIImage(named: KeysImages.backgroundImage.rawValue) {
+            backgroundColor = UIColor(patternImage: backgroundImage)
+        } else {
+            backgroundColor = .lightGray
+        }
+        
         forgetButton.setTitle("Забыли пароль?", for: .normal)
         forgetButton.titleLabel?.font = .boldSystemFont(ofSize: 18)
         forgetButton.setTitleColor(.red, for: .normal)
@@ -64,11 +62,6 @@ final class LoginView: UIView {
         googleButton.backgroundColor = .white
         googleButton.setTitleColor(.darkGray, for: .normal)
         CustomButton.customGoogleButton(googleButton)
-        
-        backButton.setImage(UIImage(systemName: KeysButtons.backButton.rawValue), for: .normal)
-        backButton.setTitle("Назад", for: .normal)
-        backButton.titleLabel?.font = .systemFont(ofSize: 22)
-        backButton.tintColor = .label
     }
     
     //MARK: - Constraints
@@ -79,7 +72,7 @@ final class LoginView: UIView {
             backButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             backButton.heightAnchor.constraint(equalToConstant: 30),
             
-            containerView.topAnchor.constraint(equalTo: self.backButton.bottomAnchor, constant: 100),
+            containerView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 100),
             containerView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -100),
             containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
@@ -111,25 +104,6 @@ final class LoginView: UIView {
             googleButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 40),
             googleButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -40)
         ])
-    }
-}
-
-import SwiftUI
-struct ListProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let listVC = LoginViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ListProvider.ContainerView>) -> LoginViewController {
-            return listVC
-        }
-        
-        func updateUIViewController(_ uiViewController: ListProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ListProvider.ContainerView>) {
-        }
     }
 }
 

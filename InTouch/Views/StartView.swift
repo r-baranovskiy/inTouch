@@ -5,9 +5,6 @@ class StartView: UIView {
     //MARK: - Constants
     
     private var timeIntervalAnimate = 0.5
-    private var backgroundImageView: UIImageView {
-        return UIImageView(image: UIImage(named: KeysImages.backgroundImage.rawValue))
-    }
     
     //Labels
     private let mainLabel = UILabel(text: "",
@@ -49,15 +46,11 @@ class StartView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
+        backgroundColor = .backgoundImage()
         showAnimatedMainLabel()
         configurePropertyStackView()
         configureButtonsStackView()
-        backgroundImageView.frame = self.frame
-        
-        addSubview(backgroundImageView)
-        addSubiewWithoutAutoresizing(mainLabel)
-        addSubiewWithoutAutoresizing(propertyStackView)
-        addSubiewWithoutAutoresizing(buttonsStackView)
+        addSubviews()
         
         setConstraints()
     }
@@ -67,6 +60,12 @@ class StartView: UIView {
     }
     
     //MARK: - Settings UI
+    
+    private func addSubviews() {
+        addSubiewWithoutAutoresizing(mainLabel)
+        addSubiewWithoutAutoresizing(propertyStackView)
+        addSubiewWithoutAutoresizing(buttonsStackView)
+    }
     
     private func showAnimatedMainLabel() {
         let nameLabel = "In Touch"

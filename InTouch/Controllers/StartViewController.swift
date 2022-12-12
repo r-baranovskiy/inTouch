@@ -39,14 +39,16 @@ class StartViewController: UIViewController {
     
     @objc private func registerButtonPressed() {
         let registerVC = RegisterViewController()
+        registerVC.modalTransitionStyle = .crossDissolve
         registerVC.modalPresentationStyle = .fullScreen
-        present(registerVC, animated: false)
+        present(registerVC, animated: true)
     }
     
     @objc private func loginButtonPressed() {
         let loginVC = LoginViewController()
+        loginVC.modalTransitionStyle = .crossDissolve
         loginVC.modalPresentationStyle = .fullScreen
-        present(loginVC, animated: false)
+        present(loginVC, animated: true)
     }
     
     //MARK: - Appearance

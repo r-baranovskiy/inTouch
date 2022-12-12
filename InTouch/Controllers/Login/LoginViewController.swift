@@ -56,7 +56,7 @@ final class LoginViewController: UIViewController {
     }
     
     @objc private func backButtonPressed() {
-        self.dismiss(animated: false)
+        self.dismiss(animated: true)
     }
     
     //MARK: - Appearance

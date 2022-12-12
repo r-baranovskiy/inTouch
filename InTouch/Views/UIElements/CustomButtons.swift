@@ -10,10 +10,11 @@ class CustomButton: UIButton {
         self.backgroundColor = .gray
         self.setTitleColor(.white, for: .normal)
         self.layer.cornerRadius = 10
+        self.alpha = 0.7
         
         if isShadow {
             self.layer.shadowColor = UIColor.darkGray.cgColor
-            self.layer.shadowRadius = 5
+            self.layer.shadowRadius = 2
             self.layer.shadowOpacity = 10
             self.layer.shadowOffset = CGSize(width: 0, height: 10)
         }
@@ -22,6 +23,7 @@ class CustomButton: UIButton {
     static func customGoogleButton(_ googleButton: UIButton) {
         let googleLogo = UIImageView(image: UIImage(named: "googleLogo"))
         googleLogo.contentMode = .scaleToFill
+        googleButton.alpha = 1
         googleButton.addSubiewWithoutAutoresizing(googleLogo)
         
         NSLayoutConstraint.activate([
@@ -30,5 +32,18 @@ class CustomButton: UIButton {
             googleLogo.leadingAnchor.constraint(equalTo: googleButton.leadingAnchor, constant: 15),
             googleLogo.centerYAnchor.constraint(equalTo: googleButton.centerYAnchor)
         ])
+    }
+    
+    static func backButton() -> UIButton {
+        let button = UIButton(type: .system)
+        
+        button.setImage(UIImage(systemName: KeysButtonsImages.backButton.rawValue),
+                            for: .normal)
+        button.setTitle("Отменить", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 22)
+        button.tintColor = .label
+        
+        
+        return button
     }
 }

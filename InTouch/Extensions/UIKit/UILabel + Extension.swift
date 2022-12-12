@@ -13,6 +13,7 @@ extension UILabel {
         self.textColor = textColor
         self.font = font
         self.textAlignment = alignment
+        self.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
         
         if adjustsFontSizeToFitWidth {
             self.minimumScaleFactor = minimumScale
