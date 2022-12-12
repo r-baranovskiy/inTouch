@@ -7,6 +7,7 @@ class SettingsProfileViewController: UIViewController, UINavigationControllerDel
     private let settingsProfileView = SettingsProfileView()
     private var backButton = UIButton()
     private var userPhotoView = UIImageView()
+    private var goToChatButton = UIButton()
     
     //MARK: - Lifecycles
     
@@ -32,10 +33,7 @@ class SettingsProfileViewController: UIViewController, UINavigationControllerDel
     
     private func addTargets() {
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
-    }
-    
-    @objc private func userPhotoImagePressed() {
-        presentPhotoActionAlert()
+        goToChatButton.addTarget(self, action: #selector(goToChatButtonPressed), for: .touchUpInside)
     }
     
     private func setTapRecognizer() {
@@ -45,14 +43,24 @@ class SettingsProfileViewController: UIViewController, UINavigationControllerDel
         userPhotoView.addGestureRecognizer(photoTapRecognizer)
     }
     
+    //Buttons' tapp
+    @objc private func userPhotoImagePressed() {
+        presentPhotoActionAlert()
+    }
+    
     @objc private func backButtonPressed() {
         dismiss(animated: true)
+    }
+    
+    @objc private func goToChatButtonPressed() {
+        
     }
     
     //MARK: - Appearance
     
     private func setUIValues() {
         userPhotoView = settingsProfileView.userPhotoView
+        goToChatButton = settingsProfileView.goToChatButton
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

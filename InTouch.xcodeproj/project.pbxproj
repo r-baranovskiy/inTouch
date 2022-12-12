@@ -18,13 +18,11 @@
 		80430325293918CC00CEC95D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80430324293918CC00CEC95D /* DatabaseManager.swift */; };
 		804303272939227B00CEC95D /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804303262939227B00CEC95D /* ChatUser.swift */; };
 		80545E152926C1510084222E /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E142926C1510084222E /* UILabel + Extension.swift */; };
+		807072EF2947E77700B9A3EB /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */; };
+		807072F12947E8BC00B9A3EB /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072F02947E8BC00B9A3EB /* PeopleViewController.swift */; };
 		80A41035292CABD000C527CB /* UIAlertController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A41034292CABD000C527CB /* UIAlertController + Extensions.swift */; };
 		80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01029263AF300A25042 /* RegisterViewController.swift */; };
 		80A6B01529263B1700A25042 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01429263B1700A25042 /* ConversationsViewController.swift */; };
-		80A6B01729263B2400A25042 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01629263B2400A25042 /* NewConversationViewController.swift */; };
-		80A6B01929263B3800A25042 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01829263B3800A25042 /* ProfileViewController.swift */; };
-		80A6B01B29263B7100A25042 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01A29263B7100A25042 /* PhotoViewerViewController.swift */; };
-		80A6B01D29263B7F00A25042 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01C29263B7F00A25042 /* VideoPlayerViewController.swift */; };
 		80A6B021292652B700A25042 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B020292652B700A25042 /* StartView.swift */; };
 		80A6B023292653A700A25042 /* Enums + Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B022292653A700A25042 /* Enums + Appearance.swift */; };
 		80A6B0252926561800A25042 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B0242926561800A25042 /* RegisterView.swift */; };
@@ -55,13 +53,11 @@
 		80430324293918CC00CEC95D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		804303262939227B00CEC95D /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		80545E142926C1510084222E /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		807072F02947E8BC00B9A3EB /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		80A41034292CABD000C527CB /* UIAlertController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + Extensions.swift"; sourceTree = "<group>"; };
 		80A6B01029263AF300A25042 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		80A6B01429263B1700A25042 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
-		80A6B01629263B2400A25042 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
-		80A6B01829263B3800A25042 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		80A6B01A29263B7100A25042 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
-		80A6B01C29263B7F00A25042 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		80A6B020292652B700A25042 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		80A6B022292653A700A25042 /* Enums + Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums + Appearance.swift"; sourceTree = "<group>"; };
 		80A6B0242926561800A25042 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -112,14 +108,15 @@
 			path = InTouch;
 			sourceTree = "<group>";
 		};
-		80A6B01329263B0600A25042 /* Login */ = {
+		80A6B01329263B0600A25042 /* Login&Register */ = {
 			isa = PBXGroup;
 			children = (
+				800B5CDC2926120800D9AECF /* StartViewController.swift */,
 				80A6B01029263AF300A25042 /* RegisterViewController.swift */,
 				80E076D6292752A300499ECF /* LoginViewController.swift */,
 				80B0AAD92946E2F70082D6D9 /* SettingsProfileViewController.swift */,
 			);
-			path = Login;
+			path = "Login&Register";
 			sourceTree = "<group>";
 		};
 		80A6B01E29263C0100A25042 /* Models */ = {
@@ -213,13 +210,10 @@
 		80C219262926364F004ED3D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				80A6B01329263B0600A25042 /* Login */,
-				800B5CDC2926120800D9AECF /* StartViewController.swift */,
+				80A6B01329263B0600A25042 /* Login&Register */,
+				807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */,
+				807072F02947E8BC00B9A3EB /* PeopleViewController.swift */,
 				80A6B01429263B1700A25042 /* ConversationsViewController.swift */,
-				80A6B01629263B2400A25042 /* NewConversationViewController.swift */,
-				80A6B01829263B3800A25042 /* ProfileViewController.swift */,
-				80A6B01C29263B7F00A25042 /* VideoPlayerViewController.swift */,
-				80A6B01A29263B7100A25042 /* PhotoViewerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -310,16 +304,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CD7B5F29451E6300CEFA91 /* UIFont + Extension.swift in Sources */,
-				80A6B01729263B2400A25042 /* NewConversationViewController.swift in Sources */,
 				804303272939227B00CEC95D /* ChatUser.swift in Sources */,
 				800B5CDD2926120800D9AECF /* StartViewController.swift in Sources */,
 				80A6B01529263B1700A25042 /* ConversationsViewController.swift in Sources */,
 				80A41035292CABD000C527CB /* UIAlertController + Extensions.swift in Sources */,
+				807072EF2947E77700B9A3EB /* MainTabBarViewController.swift in Sources */,
 				801B933C29462CAB00F8EE36 /* UIViewController + Extension.swift in Sources */,
-				80A6B01D29263B7F00A25042 /* VideoPlayerViewController.swift in Sources */,
 				800B5CD92926120800D9AECF /* AppDelegate.swift in Sources */,
-				80A6B01929263B3800A25042 /* ProfileViewController.swift in Sources */,
-				80A6B01B29263B7100A25042 /* PhotoViewerViewController.swift in Sources */,
 				800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */,
 				80A6B021292652B700A25042 /* StartView.swift in Sources */,
 				80E076D929278BED00499ECF /* LoginView.swift in Sources */,
@@ -331,6 +322,7 @@
 				80545E152926C1510084222E /* UILabel + Extension.swift in Sources */,
 				80E076D7292752A300499ECF /* LoginViewController.swift in Sources */,
 				80B0AADE29472B640082D6D9 /* UIColor + Extension.swift in Sources */,
+				807072F12947E8BC00B9A3EB /* PeopleViewController.swift in Sources */,
 				80A6B0252926561800A25042 /* RegisterView.swift in Sources */,
 				80CD7B662945310500CEFA91 /* CustomButtons.swift in Sources */,
 				80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */,
