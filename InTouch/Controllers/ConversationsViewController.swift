@@ -68,13 +68,22 @@ class ConversationsViewController: UIViewController {
     //MARK: - Collection View
     
     private func setupCollectionView() {
-        conversationsCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: setupCompositionalLayout())
+        conversationsCollectionView = UICollectionView(frame: view.bounds,
+                                                       collectionViewLayout: setupCompositionalLayout())
         conversationsCollectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         conversationsCollectionView.backgroundColor = UIColor(named: KeysColor.listVCBackground.rawValue)
         view.addSubview(conversationsCollectionView)
         
-        conversationsCollectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseID)
-        conversationsCollectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseID)
+        //Register headers
+        conversationsCollectionView.register(HeaderSection.self,
+                                             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                             withReuseIdentifier: HeaderSection.headerID)
+        
+        //Register cells
+        conversationsCollectionView.register(ActiveChatCell.self,
+                                             forCellWithReuseIdentifier: ActiveChatCell.reuseID)
+        conversationsCollectionView.register(WaitingChatCell.self,
+                                             forCellWithReuseIdentifier: WaitingChatCell.reuseID)
     }
     
     private func reloadData() {
@@ -90,7 +99,9 @@ class ConversationsViewController: UIViewController {
 
 extension ConversationsViewController {
     
-    private func configure<T: SelfConfiguringCell>(cellType: T.Type, with value: MChat, for indexPath: IndexPath) -> T {
+    private func configure<T: SelfConfiguringCell>(cellType: T.Type,
+                                                   with value: MChat,
+                                                   for indexPath: IndexPath) -> T {
         guard let cell = conversationsCollectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseID, for: indexPath) as? T else { fatalError("Unable to dequare \(cellType.reuseID)") }
         cell.configure(with: value )
         return cell
@@ -104,11 +115,28 @@ extension ConversationsViewController {
             switch section {
                 
             case .activeChats:
-                return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
+                return self.configure(cellType: ActiveChatCell.self,
+                                      with: chat, for: indexPath)
             case .waitingChat:
-                return self.configure(cellType: WaitingChatCell.self, with: chat, for: indexPath)
+                return self.configure(cellType: WaitingChatCell.self,
+                                      with: chat, for: indexPath)
             }
         })
+        
+        dataSource?.supplementaryViewProvider = {
+            collectionView, kind, indexPath in
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderSection.headerID, for: indexPath) as? HeaderSection else {
+                fatalError("Can not create new header")
+            }
+            
+            guard let section = Section(rawValue: indexPath.section) else {
+                fatalError("Unknown section kind")
+            }
+            
+            sectionHeader.configure(textHeader: section.description())
+            
+            return sectionHeader
+        }
     }
 }
 
@@ -129,6 +157,10 @@ extension ConversationsViewController {
                 return self.createWaitingChatSection()
             }
         }
+        
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
         return layout
     }
     
@@ -144,6 +176,9 @@ extension ConversationsViewController {
         section.interGroupSpacing = 8
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20,
                                                              bottom: 0, trailing: 20)
+        
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
     }
     
@@ -160,7 +195,19 @@ extension ConversationsViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20,
                                                         bottom: 0, trailing: 20)
         section.orthogonalScrollingBehavior = .continuous
+        
+        let sectionHeader = createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
         return section
+    }
+    
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                       heightDimension: .estimated(1))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
+                                                                        elementKind: UICollectionView.elementKindSectionHeader,
+                                                                        alignment: .top)
+        return sectionHeader
     }
 }
 

@@ -38,6 +38,7 @@
 		80C182A4294BB9CD00C29BF5 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A3294BB9CD00C29BF5 /* WaitingChatCell.swift */; };
 		80C182A6294BBBD400C29BF5 /* ConfiguringCell Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A5294BBBD400C29BF5 /* ConfiguringCell Protocol.swift */; };
 		80C182A9294BBF6500C29BF5 /* Enum + Sections Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A8294BBF6500C29BF5 /* Enum + Sections Cell.swift */; };
+		80C182AD294BCE2200C29BF5 /* HeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182AC294BCE2200C29BF5 /* HeaderSection.swift */; };
 		80CD7B5F29451E6300CEFA91 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B5E29451E6300CEFA91 /* UIFont + Extension.swift */; };
 		80CD7B612945247400CEFA91 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B602945247400CEFA91 /* UIStackView + Extension.swift */; };
 		80CD7B662945310500CEFA91 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B652945310500CEFA91 /* CustomButtons.swift */; };
@@ -80,6 +81,7 @@
 		80C182A3294BB9CD00C29BF5 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		80C182A5294BBBD400C29BF5 /* ConfiguringCell Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfiguringCell Protocol.swift"; sourceTree = "<group>"; };
 		80C182A8294BBF6500C29BF5 /* Enum + Sections Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum + Sections Cell.swift"; sourceTree = "<group>"; };
+		80C182AC294BCE2200C29BF5 /* HeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSection.swift; sourceTree = "<group>"; };
 		80CD7B5E29451E6300CEFA91 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		80CD7B602945247400CEFA91 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		80CD7B652945310500CEFA91 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
@@ -207,6 +209,25 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		80C182AA294BCDF600C29BF5 /* ScreenViews */ = {
+			isa = PBXGroup;
+			children = (
+				80A6B020292652B700A25042 /* StartView.swift */,
+				80A6B0242926561800A25042 /* RegisterView.swift */,
+				80E076D829278BED00499ECF /* LoginView.swift */,
+				80B0AAD72946E2E00082D6D9 /* SettingsProfileView.swift */,
+			);
+			path = ScreenViews;
+			sourceTree = "<group>";
+		};
+		80C182AB294BCE0D00C29BF5 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				80C182AC294BCE2200C29BF5 /* HeaderSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
 		80C2192329263610004ED3D6 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,12 +253,10 @@
 		80C2192529263649004ED3D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80C182AA294BCDF600C29BF5 /* ScreenViews */,
+				80C182AB294BCE0D00C29BF5 /* Sections */,
 				80C1829E294B23DB00C29BF5 /* Cells */,
 				80CD7B64294530EA00CEFA91 /* UIElements */,
-				80A6B020292652B700A25042 /* StartView.swift */,
-				80A6B0242926561800A25042 /* RegisterView.swift */,
-				80E076D829278BED00499ECF /* LoginView.swift */,
-				80B0AAD72946E2E00082D6D9 /* SettingsProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +372,7 @@
 				80C182A9294BBF6500C29BF5 /* Enum + Sections Cell.swift in Sources */,
 				80C182A6294BBBD400C29BF5 /* ConfiguringCell Protocol.swift in Sources */,
 				800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */,
+				80C182AD294BCE2200C29BF5 /* HeaderSection.swift in Sources */,
 				80A6B021292652B700A25042 /* StartView.swift in Sources */,
 				80E076D929278BED00499ECF /* LoginView.swift in Sources */,
 				80CD7B612945247400CEFA91 /* UIStackView + Extension.swift in Sources */,
