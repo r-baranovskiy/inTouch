@@ -12,6 +12,7 @@
 		800B5CDD2926120800D9AECF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B5CDC2926120800D9AECF /* StartViewController.swift */; };
 		800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE12926120B00D9AECF /* Assets.xcassets */; };
 		800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800B5CE32926120B00D9AECF /* LaunchScreen.storyboard */; };
+		800CA6CB2949B2CC000096C4 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800CA6CA2949B2CC000096C4 /* Bundle-Decodable.swift */; };
 		801B933A29461B6200F8EE36 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B933929461B6200F8EE36 /* CustomTextField.swift */; };
 		801B933C29462CAB00F8EE36 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B933B29462CAA00F8EE36 /* UIViewController + Extension.swift */; };
 		804303232939147F00CEC95D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804303222939147F00CEC95D /* GoogleService-Info.plist */; };
@@ -19,10 +20,10 @@
 		804303272939227B00CEC95D /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804303262939227B00CEC95D /* ChatUser.swift */; };
 		80545E152926C1510084222E /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E142926C1510084222E /* UILabel + Extension.swift */; };
 		807072EF2947E77700B9A3EB /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */; };
-		807072F12947E8BC00B9A3EB /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072F02947E8BC00B9A3EB /* PeopleViewController.swift */; };
+		807072F12947E8BC00B9A3EB /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */; };
 		80A41035292CABD000C527CB /* UIAlertController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A41034292CABD000C527CB /* UIAlertController + Extensions.swift */; };
 		80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01029263AF300A25042 /* RegisterViewController.swift */; };
-		80A6B01529263B1700A25042 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01429263B1700A25042 /* ConversationsViewController.swift */; };
+		80A6B01529263B1700A25042 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B01429263B1700A25042 /* PeopleViewController.swift */; };
 		80A6B021292652B700A25042 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B020292652B700A25042 /* StartView.swift */; };
 		80A6B023292653A700A25042 /* Enums + Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B022292653A700A25042 /* Enums + Appearance.swift */; };
 		80A6B0252926561800A25042 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A6B0242926561800A25042 /* RegisterView.swift */; };
@@ -32,6 +33,11 @@
 		80B0AADA2946E2F70082D6D9 /* SettingsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B0AAD92946E2F70082D6D9 /* SettingsProfileViewController.swift */; };
 		80B0AADC2946E9E60082D6D9 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B0AADB2946E9E60082D6D9 /* UIImageView + Extension.swift */; };
 		80B0AADE29472B640082D6D9 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B0AADD29472B640082D6D9 /* UIColor + Extension.swift */; };
+		80C182A0294B23E800C29BF5 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1829F294B23E800C29BF5 /* ActiveChatCell.swift */; };
+		80C182A2294B3FD600C29BF5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A1294B3FD600C29BF5 /* GradientView.swift */; };
+		80C182A4294BB9CD00C29BF5 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A3294BB9CD00C29BF5 /* WaitingChatCell.swift */; };
+		80C182A6294BBBD400C29BF5 /* ConfiguringCell Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A5294BBBD400C29BF5 /* ConfiguringCell Protocol.swift */; };
+		80C182A9294BBF6500C29BF5 /* Enum + Sections Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A8294BBF6500C29BF5 /* Enum + Sections Cell.swift */; };
 		80CD7B5F29451E6300CEFA91 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B5E29451E6300CEFA91 /* UIFont + Extension.swift */; };
 		80CD7B612945247400CEFA91 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B602945247400CEFA91 /* UIStackView + Extension.swift */; };
 		80CD7B662945310500CEFA91 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B652945310500CEFA91 /* CustomButtons.swift */; };
@@ -46,6 +52,7 @@
 		800B5CE12926120B00D9AECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		800B5CE42926120B00D9AECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		800B5CE62926120B00D9AECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		800CA6CA2949B2CC000096C4 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		801B933929461B6200F8EE36 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		801B933B29462CAA00F8EE36 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		804303212938DC8100CEC95D /* InTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,10 +61,10 @@
 		804303262939227B00CEC95D /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		80545E142926C1510084222E /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		807072F02947E8BC00B9A3EB /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		80A41034292CABD000C527CB /* UIAlertController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + Extensions.swift"; sourceTree = "<group>"; };
 		80A6B01029263AF300A25042 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		80A6B01429263B1700A25042 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		80A6B01429263B1700A25042 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		80A6B020292652B700A25042 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		80A6B022292653A700A25042 /* Enums + Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums + Appearance.swift"; sourceTree = "<group>"; };
 		80A6B0242926561800A25042 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -67,6 +74,12 @@
 		80B0AAD92946E2F70082D6D9 /* SettingsProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfileViewController.swift; sourceTree = "<group>"; };
 		80B0AADB2946E9E60082D6D9 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		80B0AADD29472B640082D6D9 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		80C1829D294AE8C800C29BF5 /* activeChat.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = activeChat.json; sourceTree = "<group>"; };
+		80C1829F294B23E800C29BF5 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
+		80C182A1294B3FD600C29BF5 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		80C182A3294BB9CD00C29BF5 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
+		80C182A5294BBBD400C29BF5 /* ConfiguringCell Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfiguringCell Protocol.swift"; sourceTree = "<group>"; };
+		80C182A8294BBF6500C29BF5 /* Enum + Sections Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum + Sections Cell.swift"; sourceTree = "<group>"; };
 		80CD7B5E29451E6300CEFA91 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		80CD7B602945247400CEFA91 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		80CD7B652945310500CEFA91 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
@@ -102,8 +115,10 @@
 				80C219262926364F004ED3D6 /* Controllers */,
 				80C2192529263649004ED3D6 /* Views */,
 				80A6B026292658F900A25042 /* Enums */,
+				80C182A7294BBBF200C29BF5 /* Protocols */,
 				80A6B0272926591000A25042 /* Extensions */,
 				80C2192429263616004ED3D6 /* Resources */,
+				80C1829D294AE8C800C29BF5 /* activeChat.json */,
 			);
 			path = InTouch;
 			sourceTree = "<group>";
@@ -138,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				80A6B022292653A700A25042 /* Enums + Appearance.swift */,
+				80C182A8294BBF6500C29BF5 /* Enum + Sections Cell.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -146,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				80A6B0282926593000A25042 /* UIKit */,
+				800CA6CA2949B2CC000096C4 /* Bundle-Decodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,6 +190,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		80C1829E294B23DB00C29BF5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				80C1829F294B23E800C29BF5 /* ActiveChatCell.swift */,
+				80C182A3294BB9CD00C29BF5 /* WaitingChatCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		80C182A7294BBBF200C29BF5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				80C182A5294BBBD400C29BF5 /* ConfiguringCell Protocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		80C2192329263610004ED3D6 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +232,7 @@
 		80C2192529263649004ED3D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80C1829E294B23DB00C29BF5 /* Cells */,
 				80CD7B64294530EA00CEFA91 /* UIElements */,
 				80A6B020292652B700A25042 /* StartView.swift */,
 				80A6B0242926561800A25042 /* RegisterView.swift */,
@@ -212,8 +247,8 @@
 			children = (
 				80A6B01329263B0600A25042 /* Login&Register */,
 				807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */,
-				807072F02947E8BC00B9A3EB /* PeopleViewController.swift */,
-				80A6B01429263B1700A25042 /* ConversationsViewController.swift */,
+				807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */,
+				80A6B01429263B1700A25042 /* PeopleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +258,7 @@
 			children = (
 				80CD7B652945310500CEFA91 /* CustomButtons.swift */,
 				801B933929461B6200F8EE36 /* CustomTextField.swift */,
+				80C182A1294B3FD600C29BF5 /* GradientView.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -304,13 +340,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CD7B5F29451E6300CEFA91 /* UIFont + Extension.swift in Sources */,
+				80C182A4294BB9CD00C29BF5 /* WaitingChatCell.swift in Sources */,
 				804303272939227B00CEC95D /* ChatUser.swift in Sources */,
 				800B5CDD2926120800D9AECF /* StartViewController.swift in Sources */,
-				80A6B01529263B1700A25042 /* ConversationsViewController.swift in Sources */,
+				80A6B01529263B1700A25042 /* PeopleViewController.swift in Sources */,
 				80A41035292CABD000C527CB /* UIAlertController + Extensions.swift in Sources */,
+				800CA6CB2949B2CC000096C4 /* Bundle-Decodable.swift in Sources */,
 				807072EF2947E77700B9A3EB /* MainTabBarViewController.swift in Sources */,
 				801B933C29462CAB00F8EE36 /* UIViewController + Extension.swift in Sources */,
 				800B5CD92926120800D9AECF /* AppDelegate.swift in Sources */,
+				80C182A0294B23E800C29BF5 /* ActiveChatCell.swift in Sources */,
+				80C182A9294BBF6500C29BF5 /* Enum + Sections Cell.swift in Sources */,
+				80C182A6294BBBD400C29BF5 /* ConfiguringCell Protocol.swift in Sources */,
 				800B5CDB2926120800D9AECF /* SceneDelegate.swift in Sources */,
 				80A6B021292652B700A25042 /* StartView.swift in Sources */,
 				80E076D929278BED00499ECF /* LoginView.swift in Sources */,
@@ -322,11 +363,12 @@
 				80545E152926C1510084222E /* UILabel + Extension.swift in Sources */,
 				80E076D7292752A300499ECF /* LoginViewController.swift in Sources */,
 				80B0AADE29472B640082D6D9 /* UIColor + Extension.swift in Sources */,
-				807072F12947E8BC00B9A3EB /* PeopleViewController.swift in Sources */,
+				807072F12947E8BC00B9A3EB /* ConversationsViewController.swift in Sources */,
 				80A6B0252926561800A25042 /* RegisterView.swift in Sources */,
 				80CD7B662945310500CEFA91 /* CustomButtons.swift in Sources */,
 				80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */,
 				80B0AAD82946E2E00082D6D9 /* SettingsProfileView.swift in Sources */,
+				80C182A2294B3FD600C29BF5 /* GradientView.swift in Sources */,
 				80A6B023292653A700A25042 /* Enums + Appearance.swift in Sources */,
 				80B0AADA2946E2F70082D6D9 /* SettingsProfileViewController.swift in Sources */,
 			);

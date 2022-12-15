@@ -2,6 +2,10 @@ import Foundation
 
 enum KeysColor: String {
     case buttonsBackColor = "buttonsBackColor"
+    case tabBarColor = "tabBarColor"
+    case listVCBackground = "listVCBackgroud"
+    case startGradient = "cellStartGradientColor"
+    case endGradient = "cellEndGradientColor"
 }
 
 enum KeysFont: String {
