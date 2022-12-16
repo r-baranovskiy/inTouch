@@ -3,9 +3,8 @@ import UIKit
 class MainTabBarViewController: UITabBarController {
     
     //MARK: - Controllers
-    
-    private let peopleVC = ConversationsViewController()
-    private let conversationVC = PeopleViewController()
+    private let peopleViewController = PeopleViewController()
+    private let listViewController = ConversationsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,8 +12,8 @@ class MainTabBarViewController: UITabBarController {
         tabBar.backgroundColor = .white
                 
         viewControllers = [
-            createNavigationVC(rootVC: peopleVC, title: "Контакты", imageSystemName: "person.2.fill"),
-            createNavigationVC(rootVC: conversationVC, title: "Диалоги", imageSystemName: "message.badge.circle.fill")
+            createNavigationVC(rootVC: peopleViewController, title: "Контакты", imageSystemName: "person.2.fill"),
+            createNavigationVC(rootVC: listViewController, title: "Диалоги", imageSystemName: "message.badge.circle.fill")
         ]
     }
     

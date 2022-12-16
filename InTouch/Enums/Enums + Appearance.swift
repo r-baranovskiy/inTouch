@@ -7,6 +7,7 @@ enum KeysColor: String {
     case startGradient = "cellStartGradientColor"
     case endGradient = "cellEndGradientColor"
     case headerColor = "headerColor"
+    case shadowGray = "shadowGrayColor"
 }
 
 enum KeysFont: String {

@@ -1,36 +1,21 @@
 import UIKit
 
-struct MChat: Hashable {
-    var username: String
-    var userImage: UIImage
-    var lastMessge: String
-    var id = UUID()
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: MChat, rhs: MChat) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-
 class ConversationsViewController: UIViewController {
     
     //MARK: - CollectionView Constants
     
-    private let activeChat: [MChat] = [
-        MChat(username: "Ruslan", userImage: UIImage(named: "ava1")!, lastMessge: "How are you?"),
-        MChat(username: "Nastenok", userImage: UIImage(named: "ava3")!, lastMessge: "I hate you"),
-        MChat(username: "Kotik", userImage: UIImage(named: "ava2")!, lastMessge: "Meow"),
-        MChat(username: "Kashchenko", userImage: UIImage(named: "ava4")!, lastMessge: "САЛАМ ВСЕМ")
+    private let activeChat: [Message] = [
+        Message(username: "Ruslan", userImage: UIImage(named: "ava1")!, lastMessge: "How are you?"),
+        Message(username: "Nastenok", userImage: UIImage(named: "ava3")!, lastMessge: "I hate you"),
+        Message(username: "Kotik", userImage: UIImage(named: "ava2")!, lastMessge: "Meow"),
+        Message(username: "Kashchenko", userImage: UIImage(named: "ava4")!, lastMessge: "САЛАМ ВСЕМ")
     ]
     
-    private let waitingChat: [MChat] = [
-        MChat(username: "Ruslan", userImage: UIImage(named: "ava1")!, lastMessge: "Add me please"),
-        MChat(username: "Nastenok", userImage: UIImage(named: "ava3")!, lastMessge: "ДОБАВЬ МЕНЯ"),
-        MChat(username: "Kotik", userImage: UIImage(named: "ava2")!, lastMessge: "КЕК"),
-        MChat(username: "Kashchenko", userImage: UIImage(named: "ava4")!, lastMessge: "ВЧОМ ТЫ?")
+    private let waitingChat: [Message] = [
+        Message(username: "Ruslan", userImage: UIImage(named: "ava1")!, lastMessge: "Add me please"),
+        Message(username: "Nastenok", userImage: UIImage(named: "ava3")!, lastMessge: "ДОБАВЬ МЕНЯ"),
+        Message(username: "Kotik", userImage: UIImage(named: "ava2")!, lastMessge: "КЕК"),
+        Message(username: "Kashchenko", userImage: UIImage(named: "ava4")!, lastMessge: "ВЧОМ ТЫ?")
     ]
     
     private var conversationsCollectionView: UICollectionView = {
@@ -38,7 +23,7 @@ class ConversationsViewController: UIViewController {
         return collection
     }()
     
-    private var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
+    private var dataSource: UICollectionViewDiffableDataSource<ListSection, Message>?
     
     //MARK: - Lifecycles
     
@@ -69,7 +54,7 @@ class ConversationsViewController: UIViewController {
     
     private func setupCollectionView() {
         conversationsCollectionView = UICollectionView(frame: view.bounds,
-                                                       collectionViewLayout: setupCompositionalLayout())
+                                                       collectionViewLayout: createCompositionalLayout())
         conversationsCollectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         conversationsCollectionView.backgroundColor = UIColor(named: KeysColor.listVCBackground.rawValue)
         view.addSubview(conversationsCollectionView)
@@ -87,7 +72,7 @@ class ConversationsViewController: UIViewController {
     }
     
     private func reloadData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, MChat>()
+        var snapshot = NSDiffableDataSourceSnapshot<ListSection, Message>()
         snapshot.appendSections([.waitingChat, .activeChats])
         snapshot.appendItems(waitingChat, toSection: .waitingChat)
         snapshot.appendItems(activeChat, toSection: .activeChats)
@@ -99,27 +84,23 @@ class ConversationsViewController: UIViewController {
 
 extension ConversationsViewController {
     
-    private func configure<T: SelfConfiguringCell>(cellType: T.Type,
-                                                   with value: MChat,
-                                                   for indexPath: IndexPath) -> T {
-        guard let cell = conversationsCollectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseID, for: indexPath) as? T else { fatalError("Unable to dequare \(cellType.reuseID)") }
-        cell.configure(with: value )
-        return cell
-    }
-    
     private func createDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, MChat>(collectionView: conversationsCollectionView, cellProvider: { collectionView, indexPath, chat in
-            guard let section = Section(rawValue: indexPath.section) else {
+        dataSource = UICollectionViewDiffableDataSource<ListSection, Message>(collectionView: conversationsCollectionView, cellProvider: { collectionView, indexPath, chat in
+            guard let section = ListSection(rawValue: indexPath.section) else {
                 fatalError("Unknown section kind")
             }
             switch section {
                 
             case .activeChats:
-                return self.configure(cellType: ActiveChatCell.self,
-                                      with: chat, for: indexPath)
+                return self.configure(collectionView: self.conversationsCollectionView,
+                                 cellType: ActiveChatCell.self,
+                                 with: chat,
+                                 for: indexPath)
             case .waitingChat:
-                return self.configure(cellType: WaitingChatCell.self,
-                                      with: chat, for: indexPath)
+                return self.configure(collectionView: self.conversationsCollectionView,
+                                 cellType: WaitingChatCell.self,
+                                 with: chat,
+                                 for: indexPath)
             }
         })
         
@@ -129,11 +110,11 @@ extension ConversationsViewController {
                 fatalError("Can not create new header")
             }
             
-            guard let section = Section(rawValue: indexPath.section) else {
+            guard let section = ListSection(rawValue: indexPath.section) else {
                 fatalError("Unknown section kind")
             }
             
-            sectionHeader.configure(textHeader: section.description())
+            sectionHeader.configure(textHeader: section.description(), font: .laoSangamMN20(), textColor: .label)
             
             return sectionHeader
         }
@@ -144,9 +125,9 @@ extension ConversationsViewController {
 
 extension ConversationsViewController {
     
-    private func setupCompositionalLayout() -> UICollectionViewLayout {
+    private func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
-            guard let section = Section(rawValue: sectionIndex) else {
+            guard let section = ListSection(rawValue: sectionIndex) else {
                 fatalError("unknown section kind")
             }
             

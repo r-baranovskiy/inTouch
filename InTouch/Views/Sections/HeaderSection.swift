@@ -16,10 +16,10 @@ class HeaderSection: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(textHeader: String) {
+    func configure(textHeader: String, font:UIFont?, textColor: UIColor?) {
         headerTitle.text = textHeader
-        headerTitle.font = .laoSangamMN20()
-        headerTitle.textColor = UIColor(named: KeysColor.headerColor.rawValue)
+        headerTitle.font = font
+        headerTitle.textColor = textColor
     }
     
     private func setConstraints() {

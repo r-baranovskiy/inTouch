@@ -48,10 +48,11 @@ class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     //MARK: - Behavior
     
-    func configure(with value: MChat) {
-        contactImageView.image = value.userImage
-        contactName.text = value.username
-        lastMessage.text = value.lastMessge
+    func configure<U>(with value: U) where U : Hashable {
+        guard let message: Message = value as? Message else { return }
+        contactImageView.image = message.userImage
+        contactName.text = message.username
+        lastMessage.text = message.lastMessge
     }
     
     //MARK: - UI Config
