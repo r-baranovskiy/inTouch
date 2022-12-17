@@ -20,6 +20,7 @@
 		8049CFA6294D033100F0E1C5 /* UserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049CFA5294D033100F0E1C5 /* UserChatCell.swift */; };
 		8049CFA8294D2BF500F0E1C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049CFA7294D2BF500F0E1C5 /* ProfileViewController.swift */; };
 		8049CFAA294D2C5600F0E1C5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049CFA9294D2C5600F0E1C5 /* ProfileView.swift */; };
+		8049CFAC294D4D7200F0E1C5 /* README.MD in Resources */ = {isa = PBXBuildFile; fileRef = 8049CFAB294D4D7200F0E1C5 /* README.MD */; };
 		80545E152926C1510084222E /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E142926C1510084222E /* UILabel + Extension.swift */; };
 		807072EF2947E77700B9A3EB /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */; };
 		807072F12947E8BC00B9A3EB /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */; };
@@ -64,6 +65,7 @@
 		8049CFA5294D033100F0E1C5 /* UserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatCell.swift; sourceTree = "<group>"; };
 		8049CFA7294D2BF500F0E1C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8049CFA9294D2C5600F0E1C5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8049CFAB294D4D7200F0E1C5 /* README.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.MD; sourceTree = "<group>"; };
 		80545E142926C1510084222E /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		800B5CCC2926120800D9AECF = {
 			isa = PBXGroup;
 			children = (
+				8049CFAB294D4D7200F0E1C5 /* README.MD */,
 				800B5CD72926120800D9AECF /* InTouch */,
 				804303212938DC8100CEC95D /* InTouch.app */,
 			);
@@ -350,6 +353,7 @@
 			files = (
 				800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */,
 				800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */,
+				8049CFAC294D4D7200F0E1C5 /* README.MD in Resources */,
 				80A6B02D29265ABC00A25042 /* beerMoney.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
