@@ -7,3 +7,5 @@
 * Show your location 
 
 ### This app was written in Swift language and contains the following ...:
+
+![Screenshot registration](ScreenLogin.png)

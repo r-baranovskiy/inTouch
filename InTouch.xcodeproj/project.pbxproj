@@ -47,6 +47,8 @@
 		80CD7B662945310500CEFA91 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD7B652945310500CEFA91 /* CustomButtons.swift */; };
 		80E076D7292752A300499ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D6292752A300499ECF /* LoginViewController.swift */; };
 		80E076D929278BED00499ECF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D829278BED00499ECF /* LoginView.swift */; };
+		80E77409294DBAD7002F11AA /* ScreenLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 80E77407294DBAD6002F11AA /* ScreenLogin.png */; };
+		80E7740A294DBAD7002F11AA /* SetupProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 80E77408294DBAD7002F11AA /* SetupProfile.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		80CD7B652945310500CEFA91 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		80E076D6292752A300499ECF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80E076D829278BED00499ECF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		80E77407294DBAD6002F11AA /* ScreenLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenLogin.png; sourceTree = "<group>"; };
+		80E77408294DBAD7002F11AA /* SetupProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetupProfile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				8049CFAB294D4D7200F0E1C5 /* README.md */,
+				80E77406294DBAA6002F11AA /* ScreenForReadmi */,
 				800B5CD72926120800D9AECF /* InTouch */,
 				804303212938DC8100CEC95D /* InTouch.app */,
 			);
@@ -289,6 +294,15 @@
 			path = UIElements;
 			sourceTree = "<group>";
 		};
+		80E77406294DBAA6002F11AA /* ScreenForReadmi */ = {
+			isa = PBXGroup;
+			children = (
+				80E77407294DBAD6002F11AA /* ScreenLogin.png */,
+				80E77408294DBAD7002F11AA /* SetupProfile.png */,
+			);
+			path = ScreenForReadmi;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,9 +366,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				800B5CE52926120B00D9AECF /* LaunchScreen.storyboard in Resources */,
+				80E77409294DBAD7002F11AA /* ScreenLogin.png in Resources */,
 				800B5CE22926120B00D9AECF /* Assets.xcassets in Resources */,
 				8049CFAC294D4D7200F0E1C5 /* README.md in Resources */,
 				80A6B02D29265ABC00A25042 /* beerMoney.ttf in Resources */,
+				80E7740A294DBAD7002F11AA /* SetupProfile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
