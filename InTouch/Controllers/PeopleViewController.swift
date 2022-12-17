@@ -27,13 +27,11 @@ class PeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
-        view.backgroundColor = UIColor(named: KeysColor.listVCBackground.rawValue)
+        view.backgroundColor = UIColor(named: KeysColor.lightGrayBackground.rawValue)
         setupCollectionView()
         createDataSource()
-        reloadData()
+        reloadData(with: nil)
     }
-    
-    
     
     //MARK: - CollectionView
     
@@ -41,7 +39,7 @@ class PeopleViewController: UIViewController {
         peopleCollectionView = UICollectionView(frame: view.bounds,
                                                 collectionViewLayout: createCompositionalLayout())
         peopleCollectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        peopleCollectionView.backgroundColor = UIColor(named: KeysColor.listVCBackground.rawValue)
+        peopleCollectionView.backgroundColor = UIColor(named: KeysColor.lightGrayBackground.rawValue)
         view.addSubview(peopleCollectionView)
         
         //Registe cell
@@ -53,10 +51,15 @@ class PeopleViewController: UIViewController {
                                       withReuseIdentifier: HeaderSection.headerID)
     }
     
-    private func reloadData() {
+    //ReloadData
+    private func reloadData(with searchText: String?) {
+        let filtered = users.filter { (user) -> Bool in
+            user.contains(filter: searchText)
+        }
+        
         var snapshot = NSDiffableDataSourceSnapshot<PeopleSection, User>()
         snapshot.appendSections([.users])
-        snapshot.appendItems(users, toSection: .users)
+        snapshot.appendItems(filtered, toSection: .users)
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
     
@@ -93,7 +96,10 @@ extension PeopleViewController {
         
         dataSource?.supplementaryViewProvider = {
             collectionView, kind, indexPath in
-            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderSection.headerID, for: indexPath) as? HeaderSection else {
+            guard let sectionHeader = collectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: HeaderSection.headerID,
+                                                  for: indexPath) as? HeaderSection else {
                 fatalError("Can not create new header")
             }
             
@@ -102,8 +108,9 @@ extension PeopleViewController {
             }
             
             let items = self.dataSource?.snapshot().numberOfItems(inSection: .users)
-            sectionHeader.configure(textHeader: section.description(usersCount: items ?? 0), font: .systemFont(ofSize: 36, weight: .light), textColor: .label)
-            
+            sectionHeader.configure(textHeader: section.description(usersCount: items ?? 0),
+                                    font: .systemFont(ofSize: 36, weight: .light),
+                                    textColor: .label)
             return sectionHeader
         }
     }
@@ -165,6 +172,6 @@ extension PeopleViewController {
 
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        reloadData(with: searchText)
     }
 }

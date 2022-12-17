@@ -56,7 +56,7 @@ class ConversationsViewController: UIViewController {
         conversationsCollectionView = UICollectionView(frame: view.bounds,
                                                        collectionViewLayout: createCompositionalLayout())
         conversationsCollectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        conversationsCollectionView.backgroundColor = UIColor(named: KeysColor.listVCBackground.rawValue)
+        conversationsCollectionView.backgroundColor = UIColor(named: KeysColor.lightGrayBackground.rawValue)
         view.addSubview(conversationsCollectionView)
         
         //Register headers

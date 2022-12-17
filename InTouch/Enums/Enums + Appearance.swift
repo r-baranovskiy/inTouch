@@ -3,7 +3,7 @@ import Foundation
 enum KeysColor: String {
     case buttonsBackColor = "buttonsBackColor"
     case tabBarColor = "tabBarColor"
-    case listVCBackground = "listVCBackgroud"
+    case lightGrayBackground = "lightGrayBackground"
     case startGradient = "cellStartGradientColor"
     case endGradient = "cellEndGradientColor"
     case headerColor = "headerColor"

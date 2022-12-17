@@ -18,6 +18,8 @@
 		8049CFA2294C285100F0E1C5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049CFA1294C285100F0E1C5 /* Message.swift */; };
 		8049CFA4294C28BE00F0E1C5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049CFA3294C28BE00F0E1C5 /* User.swift */; };
 		8049CFA6294D033100F0E1C5 /* UserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049CFA5294D033100F0E1C5 /* UserChatCell.swift */; };
+		8049CFA8294D2BF500F0E1C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049CFA7294D2BF500F0E1C5 /* ProfileViewController.swift */; };
+		8049CFAA294D2C5600F0E1C5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8049CFA9294D2C5600F0E1C5 /* ProfileView.swift */; };
 		80545E152926C1510084222E /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80545E142926C1510084222E /* UILabel + Extension.swift */; };
 		807072EF2947E77700B9A3EB /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */; };
 		807072F12947E8BC00B9A3EB /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */; };
@@ -60,6 +62,8 @@
 		8049CFA1294C285100F0E1C5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		8049CFA3294C28BE00F0E1C5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8049CFA5294D033100F0E1C5 /* UserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatCell.swift; sourceTree = "<group>"; };
+		8049CFA7294D2BF500F0E1C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8049CFA9294D2C5600F0E1C5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		80545E142926C1510084222E /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				80A6B0242926561800A25042 /* RegisterView.swift */,
 				80E076D829278BED00499ECF /* LoginView.swift */,
 				80B0AAD72946E2E00082D6D9 /* SettingsProfileView.swift */,
+				8049CFA9294D2C5600F0E1C5 /* ProfileView.swift */,
 			);
 			path = ScreenViews;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				807072EE2947E77700B9A3EB /* MainTabBarViewController.swift */,
 				807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */,
 				80A6B01429263B1700A25042 /* PeopleViewController.swift */,
+				8049CFA7294D2BF500F0E1C5 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -383,10 +389,12 @@
 				80B0AADE29472B640082D6D9 /* UIColor + Extension.swift in Sources */,
 				807072F12947E8BC00B9A3EB /* ConversationsViewController.swift in Sources */,
 				80A6B0252926561800A25042 /* RegisterView.swift in Sources */,
+				8049CFAA294D2C5600F0E1C5 /* ProfileView.swift in Sources */,
 				80CD7B662945310500CEFA91 /* CustomButtons.swift in Sources */,
 				80A6B01129263AF300A25042 /* RegisterViewController.swift in Sources */,
 				80B0AAD82946E2E00082D6D9 /* SettingsProfileView.swift in Sources */,
 				80C182A2294B3FD600C29BF5 /* GradientView.swift in Sources */,
+				8049CFA8294D2BF500F0E1C5 /* ProfileViewController.swift in Sources */,
 				80A6B023292653A700A25042 /* Enums + Appearance.swift in Sources */,
 				80B0AADA2946E2F70082D6D9 /* SettingsProfileViewController.swift in Sources */,
 			);
