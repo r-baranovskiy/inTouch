@@ -8,10 +8,12 @@
 
 ### This app was written in Swift language and contains the following ...:
 
-![Screen login](ScreenForReadmi/ScreenLogin.png)
-
 ```swift
 
-print ("Some code will be here as soon as possible ":new_moon_with_face:)
+print ("Some code will be here as soon as possible ")
 
 ```
+:new_moon_with_face:
+
+![Screen login](ScreenForReadmi/ScreenLogin.png)
+
