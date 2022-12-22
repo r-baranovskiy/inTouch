@@ -4,11 +4,11 @@ class PeopleViewController: UIViewController {
     
     //MARK: - Constants
     
-    private let users: [User] = [
-        User(username: "Nastenok", avatarImageString: "ava3", id: 1),
-        User(username: "Kashchenko", avatarImageString: "ava1", id: 2),
-        User(username: "Meow", avatarImageString: "ava2", id: 3),
-        User(username: "Ruslan", avatarImageString: "ava4", id: 4)
+    private let users: [ChatUser] = [
+        ChatUser(username: "Nastenok", avatarImageString: "ava3", id: 1),
+        ChatUser(username: "Kashchenko", avatarImageString: "ava1", id: 2),
+        ChatUser(username: "Meow", avatarImageString: "ava2", id: 3),
+        ChatUser(username: "Ruslan", avatarImageString: "ava4", id: 4)
     ]
     
     private var peopleCollectionView: UICollectionView = {
@@ -16,7 +16,7 @@ class PeopleViewController: UIViewController {
         return collection
     }()
     
-    private var dataSource: UICollectionViewDiffableDataSource<PeopleSection, User>?
+    private var dataSource: UICollectionViewDiffableDataSource<PeopleSection, ChatUser>?
     
     //MARK: - Lifecycles
     
@@ -57,7 +57,7 @@ class PeopleViewController: UIViewController {
             user.contains(filter: searchText)
         }
         
-        var snapshot = NSDiffableDataSourceSnapshot<PeopleSection, User>()
+        var snapshot = NSDiffableDataSourceSnapshot<PeopleSection, ChatUser>()
         snapshot.appendSections([.users])
         snapshot.appendItems(filtered, toSection: .users)
         dataSource?.apply(snapshot, animatingDifferences: true)
@@ -80,7 +80,7 @@ class PeopleViewController: UIViewController {
 extension PeopleViewController {
     
     private func createDataSource () {
-        dataSource = UICollectionViewDiffableDataSource<PeopleSection, User>(collectionView: peopleCollectionView, cellProvider: { collectionView, indexPath, user in
+        dataSource = UICollectionViewDiffableDataSource<PeopleSection, ChatUser>(collectionView: peopleCollectionView, cellProvider: { collectionView, indexPath, user in
             guard let section = PeopleSection(rawValue: indexPath.section) else {
                 fatalError("unknown section kind")
             }

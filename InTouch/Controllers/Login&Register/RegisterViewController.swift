@@ -50,10 +50,17 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
             return
         }
         
-        let settingsProfileVC = SettingsProfileViewController()
-        settingsProfileVC.modalTransitionStyle = .crossDissolve
-        settingsProfileVC.modalPresentationStyle = .fullScreen
-        present(settingsProfileVC, animated: true)
+        AuthService.shared.register(email: email,
+                                    password: password,
+                                    confirmPassword: confirmPassword) { (result) in
+            switch result {
+                
+            case .success(_):
+                self.goToSettingsVC()
+            case .failure(let error):
+                self.showAlert(title: "Ошибка", message: error.localizedDescription)
+            }
+        }
     }
     
     //MARK: - Behaviour
@@ -74,6 +81,13 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
         emailTextField.delegate = self
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+    }
+    
+    private func goToSettingsVC() {
+                let settingsProfileVC = SettingsProfileViewController()
+                settingsProfileVC.modalTransitionStyle = .crossDissolve
+                settingsProfileVC.modalPresentationStyle = .fullScreen
+                present(settingsProfileVC, animated: true)
     }
     
     //MARK: - Appearance

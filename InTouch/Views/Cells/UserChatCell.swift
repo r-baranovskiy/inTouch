@@ -60,7 +60,7 @@ class UserChatCell: UICollectionViewCell, SelfConfiguringCell {
     }
     
     func configure<U>(with value: U) where U : Hashable {
-        guard let user: User = value as? User else { return }
+        guard let user: ChatUser = value as? ChatUser else { return }
         userImageView.image = UIImage(named: user.avatarImageString)
         userName.text = user.username
     }

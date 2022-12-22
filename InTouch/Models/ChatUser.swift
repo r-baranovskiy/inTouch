@@ -1,6 +1,6 @@
 import UIKit
 
-struct User: Hashable {
+struct ChatUser: Hashable {
     var username: String
     var avatarImageString: String
     var id: Int
@@ -9,7 +9,7 @@ struct User: Hashable {
         hasher.combine(id)
     }
     
-    static func == (lhs: User, rhs: User) -> Bool {
+    static func == (lhs: ChatUser, rhs: ChatUser) -> Bool {
         return lhs.id == rhs.id
     }
     

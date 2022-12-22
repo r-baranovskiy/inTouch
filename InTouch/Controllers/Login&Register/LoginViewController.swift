@@ -53,6 +53,17 @@ final class LoginViewController: UIViewController {
         else {
             return
         }
+        
+        AuthService.shared.login(email: email,
+                                 password: password) { (result) in
+            switch result {
+                
+            case .success(_):
+                print("success")
+            case .failure(_):
+                print("fail")
+            }
+        }
     }
     
     @objc private func backButtonPressed() {
