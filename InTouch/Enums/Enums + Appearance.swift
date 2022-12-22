@@ -8,6 +8,7 @@ enum KeysColor: String {
     case endGradient = "cellEndGradientColor"
     case headerColor = "headerColor"
     case shadowGray = "shadowGrayColor"
+    case denyButtonColor = "denyButtonColor"
 }
 
 enum KeysFont: String {
@@ -22,4 +23,5 @@ enum KeysImages: String {
 enum KeysButtonsImages: String {
     case backButton = "arrowshape.turn.up.backward"
     case addPhoto = "person.crop.circle.fill.badge.plus"
+    case publishInfoImage = "publishImageForButton"
 }

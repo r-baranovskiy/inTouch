@@ -36,6 +36,8 @@
 		80B0AADA2946E2F70082D6D9 /* SettingsProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B0AAD92946E2F70082D6D9 /* SettingsProfileViewController.swift */; };
 		80B0AADC2946E9E60082D6D9 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B0AADB2946E9E60082D6D9 /* UIImageView + Extension.swift */; };
 		80B0AADE29472B640082D6D9 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B0AADD29472B640082D6D9 /* UIColor + Extension.swift */; };
+		80B8BD77294E4212007078D1 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8BD76294E4212007078D1 /* ChatRequestViewController.swift */; };
+		80B8BD79294E4248007078D1 /* ChatRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8BD78294E4248007078D1 /* ChatRequestView.swift */; };
 		80C182A0294B23E800C29BF5 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1829F294B23E800C29BF5 /* ActiveChatCell.swift */; };
 		80C182A2294B3FD600C29BF5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A1294B3FD600C29BF5 /* GradientView.swift */; };
 		80C182A4294BB9CD00C29BF5 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C182A3294BB9CD00C29BF5 /* WaitingChatCell.swift */; };
@@ -48,6 +50,7 @@
 		80E076D7292752A300499ECF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D6292752A300499ECF /* LoginViewController.swift */; };
 		80E076D929278BED00499ECF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E076D829278BED00499ECF /* LoginView.swift */; };
 		80E7740C294DC201002F11AA /* ScreenLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 80E7740B294DC201002F11AA /* ScreenLogin.png */; };
+		80E7740E294DD057002F11AA /* SmileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7740D294DD057002F11AA /* SmileTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,8 @@
 		80B0AAD92946E2F70082D6D9 /* SettingsProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfileViewController.swift; sourceTree = "<group>"; };
 		80B0AADB2946E9E60082D6D9 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		80B0AADD29472B640082D6D9 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		80B8BD76294E4212007078D1 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
+		80B8BD78294E4248007078D1 /* ChatRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestView.swift; sourceTree = "<group>"; };
 		80C1829F294B23E800C29BF5 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		80C182A1294B3FD600C29BF5 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		80C182A3294BB9CD00C29BF5 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
@@ -94,6 +99,7 @@
 		80E076D6292752A300499ECF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80E076D829278BED00499ECF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		80E7740B294DC201002F11AA /* ScreenLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenLogin.png; sourceTree = "<group>"; };
+		80E7740D294DD057002F11AA /* SmileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +233,7 @@
 				80E076D829278BED00499ECF /* LoginView.swift */,
 				80B0AAD72946E2E00082D6D9 /* SettingsProfileView.swift */,
 				8049CFA9294D2C5600F0E1C5 /* ProfileView.swift */,
+				80B8BD78294E4248007078D1 /* ChatRequestView.swift */,
 			);
 			path = ScreenViews;
 			sourceTree = "<group>";
@@ -278,6 +285,7 @@
 				807072F02947E8BC00B9A3EB /* ConversationsViewController.swift */,
 				80A6B01429263B1700A25042 /* PeopleViewController.swift */,
 				8049CFA7294D2BF500F0E1C5 /* ProfileViewController.swift */,
+				80B8BD76294E4212007078D1 /* ChatRequestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 				80CD7B652945310500CEFA91 /* CustomButtons.swift */,
 				801B933929461B6200F8EE36 /* CustomTextField.swift */,
 				80C182A1294B3FD600C29BF5 /* GradientView.swift */,
+				80E7740D294DD057002F11AA /* SmileTextField.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -394,10 +403,13 @@
 				80C182AD294BCE2200C29BF5 /* HeaderSection.swift in Sources */,
 				80A6B021292652B700A25042 /* StartView.swift in Sources */,
 				80E076D929278BED00499ECF /* LoginView.swift in Sources */,
+				80B8BD79294E4248007078D1 /* ChatRequestView.swift in Sources */,
+				80E7740E294DD057002F11AA /* SmileTextField.swift in Sources */,
 				80CD7B612945247400CEFA91 /* UIStackView + Extension.swift in Sources */,
 				80A6B02A2926594000A25042 /* UIView + Extension.swift in Sources */,
 				801B933A29461B6200F8EE36 /* CustomTextField.swift in Sources */,
 				80B0AADC2946E9E60082D6D9 /* UIImageView + Extension.swift in Sources */,
+				80B8BD77294E4212007078D1 /* ChatRequestViewController.swift in Sources */,
 				8049CFA6294D033100F0E1C5 /* UserChatCell.swift in Sources */,
 				80545E152926C1510084222E /* UILabel + Extension.swift in Sources */,
 				80E076D7292752A300499ECF /* LoginViewController.swift in Sources */,

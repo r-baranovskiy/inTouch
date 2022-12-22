@@ -5,6 +5,9 @@ class ProfileView: UIView {
     //MARK: - UI Constants
     
     private var profileContainerView = UIView()
+    private (set) var sendButton = UIButton(type: .system)
+    
+    let profileInfoTextField = SmileTextField()
     
     private let profileImage = UIImageView(imageName: "ava1",
                                            contentMode: .scaleAspectFill,
@@ -15,24 +18,24 @@ class ProfileView: UIView {
                                            textColor: .label,
                                            adjustsFontSizeToFitWidth: true,
                                            alignment: .center)
-    private let profileAboutLabel = UILabel(text: "I work at the factory as a worker",
-                                       font: .avenir20(),
-                                       textColor: .label,
-                                       adjustsFontSizeToFitWidth: true)
+    private (set) var profileAboutLabel = UILabel(text: "I work at the factory as a worker",
+                                                  font: .avenir20(),
+                                                  textColor: .label,
+                                                  adjustsFontSizeToFitWidth: true)
     
-    private let profileInfoTextField = UITextField()
     
     //MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
+        sendButton = profileInfoTextField.sendButton
         addSubiewWithoutAutoresizing(profileImage)
         addSubiewWithoutAutoresizing(profileContainerView)
-
+        
         customizeElements()
         setupProfileContainer()
-
+        
         setConstraints()
     }
     
@@ -65,7 +68,7 @@ class ProfileView: UIView {
             profileContainerView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             profileImage.topAnchor.constraint(equalTo: topAnchor),
-            profileImage.bottomAnchor.constraint(equalTo: profileContainerView.bottomAnchor, constant: 30),
+            profileImage.bottomAnchor.constraint(equalTo: profileContainerView.bottomAnchor, constant: -30),
             profileImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             profileImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             
@@ -75,36 +78,14 @@ class ProfileView: UIView {
             
             profileAboutLabel.topAnchor.constraint(equalTo: profileNameLabel.bottomAnchor, constant: 10),
             profileAboutLabel.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 10),
-            profileContainerView.trailingAnchor.constraint(equalTo: profileContainerView.trailingAnchor, constant: -10),
-            profileContainerView.bottomAnchor.constraint(equalTo: profileContainerView.bottomAnchor, constant: -20),
+            profileAboutLabel.trailingAnchor.constraint(equalTo: profileContainerView.trailingAnchor, constant: -10),
             
             profileInfoTextField.topAnchor.constraint(equalTo: profileAboutLabel.bottomAnchor, constant: 10),
             profileInfoTextField.leadingAnchor.constraint(equalTo: profileContainerView.leadingAnchor, constant: 20),
             profileInfoTextField.trailingAnchor.constraint(equalTo: profileContainerView.trailingAnchor, constant: -20),
-            profileInfoTextField.heightAnchor.constraint(equalToConstant: 38)
-            
+            profileInfoTextField.heightAnchor.constraint(equalToConstant: 38),
+            profileInfoTextField.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
-        
-    }
-
-}
-
-import SwiftUI
-struct ListProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let listVC = ProfileViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ListProvider.ContainerView>) -> ProfileViewController {
-            return listVC
-        }
-        
-        func updateUIViewController(_ uiViewController: ListProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ListProvider.ContainerView>) {
-        }
     }
 }
 
