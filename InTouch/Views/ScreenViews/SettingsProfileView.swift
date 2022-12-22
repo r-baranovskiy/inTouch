@@ -17,7 +17,7 @@ class SettingsProfileView: UIView {
     let sexSegmentedControl = UISegmentedControl(items: ["Мужской", "Женский"])
     
     //Buttons
-    let backButton = CustomButton.backButton()
+    let backButton = CustomButton.createBackButton()
     let goToChatButton = CustomButton(text: "Общаться!",
                                       isShadow: true)
     

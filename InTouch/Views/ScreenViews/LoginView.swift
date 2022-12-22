@@ -19,7 +19,7 @@ final class LoginView: UIView {
     //Buttons
     let loginButton = CustomButton(text: "Войти", isShadow: false)
     let googleButton = CustomButton(text: "Google", isShadow: true)
-    let backButton = CustomButton.backButton()
+    let backButton = CustomButton.createBackButton()
     private (set) var forgetButton = UIButton(type: .system)
     
     //MARK: - Override
@@ -61,7 +61,7 @@ final class LoginView: UIView {
         
         googleButton.backgroundColor = .white
         googleButton.setTitleColor(.darkGray, for: .normal)
-        CustomButton.customGoogleButton(googleButton)
+        CustomButton.createGoogleButton(googleButton)
     }
     
     //MARK: - Constraints

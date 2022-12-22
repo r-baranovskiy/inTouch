@@ -17,7 +17,7 @@ class RegisterView: UIView {
                                                                    isSecure: true)
     
     //Buttons
-    let backButton = CustomButton.backButton()
+    let backButton = CustomButton.createBackButton()
     let registerButton = CustomButton(text: "Регистрация",
                                       isShadow: false)
 

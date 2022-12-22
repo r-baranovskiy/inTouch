@@ -20,7 +20,30 @@ class CustomButton: UIButton {
         }
     }
     
-    static func customGoogleButton(_ googleButton: UIButton) {
+    static func createAcceptButton() -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle("ACCEPT", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.titleLabel?.font = .laoSangamMN20()
+        button.layer.cornerRadius = 10
+        
+        return button
+    }
+    
+    static func createDenyButton() -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle("Deny", for: .normal)
+        button.setTitleColor(UIColor(named: KeysColor.denyButtonColor.rawValue), for: .normal)
+        button.backgroundColor = .white
+        button.titleLabel?.font = .laoSangamMN20()
+        button.layer.cornerRadius = 10
+        button.layer.borderWidth = 1.2
+        button.layer.borderColor = UIColor(named: KeysColor.denyButtonColor.rawValue)?.cgColor
+        return button
+    }
+    
+    static func createGoogleButton(_ googleButton: UIButton) {
         let googleLogo = UIImageView(image: UIImage(named: "googleLogo"))
         googleLogo.contentMode = .scaleToFill
         googleButton.alpha = 1
@@ -34,7 +57,7 @@ class CustomButton: UIButton {
         ])
     }
     
-    static func backButton() -> UIButton {
+    static func createBackButton() -> UIButton {
         let button = UIButton(type: .system)
         
         button.setImage(UIImage(systemName: KeysButtonsImages.backButton.rawValue),
