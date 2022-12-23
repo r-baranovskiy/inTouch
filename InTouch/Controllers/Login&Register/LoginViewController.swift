@@ -46,18 +46,9 @@ final class LoginViewController: UIViewController {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text,
-              !email.isEmpty,
-              !password.isEmpty, password.count >= 6
-        else {
-            return
-        }
-        
-        AuthService.shared.login(email: email,
-                                 password: password) { (result) in
+        AuthService.shared.login(email: emailTextField.text,
+                                 password: passwordTextField.text) { (result) in
             switch result {
-                
             case .success(_):
                 print("success")
             case .failure(_):

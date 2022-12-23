@@ -26,35 +26,13 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
         hideKeyboardWhenTappedAround()
     }
     
-    //MARK: - Registration
+    //MARK: - Behaviour
     
     @objc private func registerButtonPressed() {
-        guard let email = emailTextField.text,
-              let password = passwordTextField.text,
-              let confirmPassword = confirmPasswordTextField.text,
-              !email.isEmpty,
-              !password.isEmpty,
-              !confirmPassword.isEmpty
-        else {
-            return showAlert(title: "Ошибка ввода",
-                             message: "Проверьте всю введенную информацию.")
-        }
-        
-        if confirmPassword != password {
-            showAlert(title: "Пароли не совпадают", message: "")
-            return
-        }
-        
-        if password.count < 6 {
-            showAlert(title: "Неверный пароль", message: "Пароль должен содержать не менее 6-и символов")
-            return
-        }
-        
-        AuthService.shared.register(email: email,
-                                    password: password,
-                                    confirmPassword: confirmPassword) { (result) in
+        AuthService.shared.register(email: emailTextField.text,
+                                    password: passwordTextField.text,
+                                    confirmPassword: confirmPasswordTextField.text) { (result) in
             switch result {
-                
             case .success(_):
                 self.goToSettingsVC()
             case .failure(let error):
@@ -62,8 +40,6 @@ final class RegisterViewController: UIViewController, UINavigationControllerDele
             }
         }
     }
-    
-    //MARK: - Behaviour
     
     private func setTargets() {
         registerButton.addTarget(self,
