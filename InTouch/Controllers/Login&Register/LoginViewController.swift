@@ -50,9 +50,12 @@ final class LoginViewController: UIViewController {
                                  password: passwordTextField.text) { (result) in
             switch result {
             case .success(_):
-                print("success")
-            case .failure(_):
-                print("fail")
+                let mainTabBarVC = MainTabBarViewController()
+                mainTabBarVC.modalTransitionStyle = .partialCurl
+                mainTabBarVC.modalPresentationStyle = .fullScreen
+                self.present(mainTabBarVC, animated: false)
+            case .failure(let error):
+                self.showAlert(title: error.localizedDescription, message: "")
             }
         }
     }

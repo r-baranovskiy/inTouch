@@ -20,7 +20,7 @@ class UserChatCell: UICollectionViewCell, SelfConfiguringCell {
         super.init(frame: frame)
         addSubiewWithoutAutoresizing(cellContainer)
         setupCellContainer()
-        backgroundColor = .white
+        backgroundColor = .lightGray
         layer.cornerRadius = 3
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOpacity = 0.5

@@ -11,6 +11,10 @@ extension UIViewController {
 
     @objc func hideKeyboard() {
         view.endEditing(true)
+        
+        if let nav = self.navigationController {
+            nav.view.endEditing(true)
+        }
     }
 }
 

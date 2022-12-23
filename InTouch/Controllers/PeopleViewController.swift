@@ -26,8 +26,9 @@ class PeopleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupSearchBar()
         view.backgroundColor = UIColor(named: KeysColor.lightGrayBackground.rawValue)
+        hideKeyboardWhenTappedAround()
+        setupSearchBar()
         setupCollectionView()
         createDataSource()
         reloadData(with: nil)
@@ -173,5 +174,9 @@ extension PeopleViewController {
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         reloadData(with: searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.endEditing(true)
     }
 }

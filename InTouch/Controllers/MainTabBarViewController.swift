@@ -9,7 +9,7 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.tintColor = UIColor(named: KeysColor.tabBarColor.rawValue)
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = UIColor(named: KeysColor.tabBarBackgroundColor.rawValue)
                 
         viewControllers = [
             createNavigationVC(rootVC: peopleViewController, title: "Контакты", imageSystemName: "person.2.fill"),
